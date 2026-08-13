@@ -1,0 +1,43 @@
+# Local PHP server/runtime files
+*.pid
+*.log
+
+# Project reference documents (not required by the website)
+*.pdf
+
+# Video captures and temporary design exports
+*.mp4
+*.mov
+frame-*.jpg
+frame-*.png
+section2-*.jpg
+section2-*.png
+phase-*.jpg
+phase-*.png
+video-contact*.jpg
+video-contact*.png
+
+# Environment and local configuration
+.env
+.env.*
+!.env.example
+
+# Editor and operating-system metadata
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Dependency/build caches
+node_modules/
+vendor/
+.cache/
+dist/
+
+# Temporary and backup files
+*.tmp
+*.temp
+*.bak
+*.swp
+*~

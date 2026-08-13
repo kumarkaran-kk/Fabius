@@ -1,0 +1,30 @@
+.collection-portal {
+    --spot-x: 50%;
+    --spot-y: 50%;
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    background-image: linear-gradient(rgba(0, 0, 0, .92), rgba(0, 0, 0, .88)), var(--portal-background);
+    background-size: cover;
+    background-position: center;
+}
+
+.collection-portal::before {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    inset: 0;
+    background: var(--portal-background) center / cover no-repeat;
+    filter: brightness(.74);
+    opacity: 0;
+    transition: opacity .22s ease;
+    mask-image: radial-gradient(circle 155px at var(--spot-x) var(--spot-y), #000 0, #000 14%, rgba(0, 0, 0, .78) 40%, transparent 78%);
+    -webkit-mask-image: radial-gradient(circle 155px at var(--spot-x) var(--spot-y), #000 0, #000 14%, rgba(0, 0, 0, .78) 40%, transparent 78%);
+}
+
+.collection-portal.is-spotlit::before { opacity: 1; }
+.collection-portal > * { position: relative; z-index: 1; }
+
+@media (prefers-reduced-motion: reduce) {
+    .collection-portal::before { transition: none; }
+}

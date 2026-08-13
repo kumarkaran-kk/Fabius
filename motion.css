@@ -1,0 +1,1074 @@
+/* Motion matched to the supplied Figma prototype recording. */
+.hero-slide {
+    opacity: 1;
+    transform: translateX(100%);
+    transition: transform .62s cubic-bezier(.65, 0, .35, 1);
+    will-change: transform
+}
+
+.hero-slide.is-active {
+    transform: translateX(0);
+    z-index: 2
+}
+
+.hero-slide.is-exiting {
+    transform: translateX(-100%);
+    z-index: 1;
+    pointer-events: none
+}
+
+.hero-slide.is-exiting-right {
+    transform: translateX(100%);
+    z-index: 1;
+    pointer-events: none
+}
+
+.hero-slide.is-entering-left {
+    transform: translateX(-100%);
+    transition: none
+}
+
+.hero-slide .hero-copy {
+    transition: transform .62s cubic-bezier(.65, 0, .35, 1)
+}
+
+.hero-slide.is-exiting .hero-copy {
+    transform: translateX(-18%)
+}
+
+.hero-slide {
+    background-size: 108.5% 100%;
+    background-position: left center
+}
+
+.hero-copy-shared {
+    --hero-index: 0;
+    z-index: 6
+}
+
+.hero-copy-shared {
+    width: min(860px, 52vw)
+}
+
+.hero-copy-shared .hero-copy-window {
+    width: min(590px, 38vw)
+}
+
+.hero-dots {
+    z-index: 7
+}
+
+.hero-title-window,
+.hero-model-window,
+.hero-copy-window {
+    overflow: hidden
+}
+
+.hero-title-window {
+    height: clamp(92px, 10.5vw, 200px)
+}
+
+.hero-model-window {
+    height: clamp(38px, 3.2vw, 61px)
+}
+
+.hero-copy-window {
+    height: clamp(76px, 5.2vw, 100px);
+    margin-top: 24px
+}
+
+.hero-text-rail {
+    height: 300%;
+    transform: translateY(calc(var(--hero-index) * -33.333333%));
+    transition: transform .62s cubic-bezier(.65, 0, .35, 1);
+    will-change: transform
+}
+
+.hero-text-rail>* {
+    display: flex;
+    height: 33.333333%;
+    margin: 0 !important;
+    align-items: flex-start
+}
+
+.hero-title-window .hero-text-rail {
+    transition-delay: .08s
+}
+
+.hero-model-window .hero-text-rail {
+    transition-delay: .14s
+}
+
+.hero-copy-window .hero-text-rail {
+    transition-delay: .2s
+}
+
+.hero-copy-shared .button {
+    margin-top: 26px
+}
+
+/* Package-to-truck order sequence, matched to the supplied hero recording. */
+.hero-order {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    color: #171717;
+    font: inherit;
+    text-transform: none
+}
+
+.hero-order:disabled {
+    cursor: default
+}
+
+.hero-order:hover,
+.hero-order:focus-visible {
+    color: #171717;
+    border-color: #e6e6e6;
+    background: #fff
+}
+
+.hero-order-label,
+.hero-order-success {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    transition: opacity .18s ease, transform .24s ease
+}
+
+.hero-order-success {
+    opacity: 0;
+    transform: translateY(8px)
+}
+
+.hero-order-road {
+    position: absolute;
+    left: 12px;
+    right: 12px;
+    top: 31px;
+    height: 1px;
+    opacity: 0;
+    background: repeating-linear-gradient(90deg,#8e99a5 0 10px,transparent 10px 17px)
+}
+
+.hero-order-truck {
+    position: absolute;
+    left: -48px;
+    top: 17px;
+    width: 42px;
+    height: 18px;
+    opacity: 0;
+    border-radius: 2px 3px 2px 2px;
+    background: #182b45
+}
+
+.hero-order-cab {
+    position: absolute;
+    right: -12px;
+    bottom: 0;
+    width: 14px;
+    height: 13px;
+    border-radius: 2px 4px 2px 0;
+    background: #182b45
+}
+
+.hero-order-cab:before {
+    content: '';
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    width: 7px;
+    height: 5px;
+    background: #dce4ea;
+    clip-path: polygon(0 0,70% 0,100% 100%,0 100%)
+}
+
+.hero-order-truck i {
+    position: absolute;
+    bottom: -5px;
+    width: 8px;
+    height: 8px;
+    border: 2px solid #182b45;
+    border-radius: 50%;
+    background: #fff
+}
+
+.hero-order-truck i:first-of-type { left: 6px }
+.hero-order-truck i:last-of-type { right: -8px }
+
+.hero-order-box {
+    position: absolute;
+    left: 12px;
+    top: -23px;
+    width: 15px;
+    height: 15px;
+    border: 1px solid #9c733b;
+    background: #c69a5d;
+    transform-origin: center bottom
+}
+
+.hero-order.is-ordering .hero-order-label {
+    opacity: 0;
+    transform: translateY(-8px)
+}
+
+.hero-order.is-ordering .hero-order-road {
+    opacity: 1;
+    animation: hero-road .42s linear infinite
+}
+
+.hero-order.is-ordering .hero-order-truck {
+    opacity: 1;
+    animation: hero-truck 2.5s cubic-bezier(.45,0,.2,1) forwards
+}
+
+.hero-order.is-ordering .hero-order-box {
+    animation: hero-box 2.5s ease-in-out forwards
+}
+
+.hero-order.is-ordering .hero-order-truck i {
+    animation: hero-wheel .32s linear infinite
+}
+
+.hero-order.is-complete .hero-order-label { opacity: 0 }
+.hero-order.is-complete .hero-order-success {
+    opacity: 1;
+    transform: translateY(0)
+}
+
+@keyframes hero-truck {
+    0%,12% { transform: translateX(0); opacity: 0 }
+    18% { opacity: 1 }
+    30%,52% { transform: translateX(78px) }
+    100% { transform: translateX(255px); opacity: 1 }
+}
+
+@keyframes hero-box {
+    0%,15% { transform: translateY(-12px) rotate(0) }
+    30% { transform: translateY(16px) rotate(0) }
+    36%,100% { transform: translateY(16px) rotate(0); opacity: 1 }
+}
+
+@keyframes hero-road { to { background-position-x: -17px } }
+@keyframes hero-wheel { to { transform: rotate(1turn) } }
+
+.category-card img {
+    transition: transform .8s ease, filter .38s ease
+}
+
+.category-card:hover img {
+    filter: brightness(.40);
+    transform: scale(1.6)
+}
+
+.category-card strong {
+    position: absolute;
+    z-index: 2;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -42%);
+    color: #fff;
+    font: 400 42px/1.2 var(--serif);
+    text-transform: uppercase;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity .38s ease, transform .38s ease
+}
+
+.category-card:hover strong {
+    opacity: 1;
+    transform: translate(-50%, -50%)
+}
+
+.category-card span {
+    z-index: 3
+}
+
+.manifesto {
+    animation: manifesto-pan 8s ease-in-out infinite;
+    background-size: 118% auto;
+    will-change: background-position
+}
+
+@keyframes manifesto-pan {
+
+    0%,
+    100% {
+        background-position: 42% center
+    }
+
+    25% {
+        background-position: 58% center
+    }
+
+    50% {
+        background-position: 68% center
+    }
+
+    75% {
+        background-position: 35% center
+    }
+}
+
+@media (prefers-reduced-motion:reduce) {
+    .manifesto {
+        animation: none
+    }
+
+    .hero-slide {
+        transition: none
+    }
+
+    .hero-order.is-ordering .hero-order-label,
+    .hero-order.is-ordering .hero-order-road,
+    .hero-order.is-ordering .hero-order-truck {
+        display: none
+    }
+
+    .hero-order.is-ordering .hero-order-success,
+    .hero-order.is-complete .hero-order-success {
+        opacity: 1;
+        transform: none
+    }
+}
+
+@media (max-width:560px) {
+    .hero-slide {
+        background-color: #030506;
+        background-size: auto 70%;
+        background-position: 59% 3%;
+        background-repeat: no-repeat
+    }
+
+    .hero-slide:after {
+        background: linear-gradient(90deg, rgba(0,0,0,.92) 0, rgba(0,0,0,.68) 47%, rgba(0,0,0,.08) 78%), linear-gradient(0deg, #030506 0, rgba(3,5,6,.88) 22%, transparent 58%)
+    }
+
+    .hero-copy-shared {
+        width: calc(100% - 48px)
+    }
+
+    .hero-copy-shared .hero-copy-window {
+        width: min(285px, 78vw)
+    }
+
+    .hero-title-window {
+        height: 58px
+    }
+
+    .hero-model-window {
+        height: 30px
+    }
+
+    .hero-copy-window {
+        height: 112px;
+        margin-top: 12px
+    }
+
+    .hero-title-window .hero-text-rail,
+    .hero-model-window .hero-text-rail,
+    .hero-copy-window .hero-text-rail {
+        transition-delay: 0s
+    }
+
+    .hero-copy-shared .button {
+        margin-top: 16px
+    }
+
+    .hero-order-truck {
+        animation-duration: 2.15s
+    }
+}
+
+@media (max-width:900px) {
+    .hero-copy-shared {
+        width: 86vw
+    }
+
+    .hero-copy-shared .hero-copy-window {
+        width: 76vw
+    }
+}
+
+/* Cursor spotlight from the supplied third-section recording. */
+.manifesto {
+    --spot-x: 50%;
+    --spot-y: 50%;
+    animation: none;
+    isolation: isolate;
+    position: relative;
+    background-image: linear-gradient(rgba(0, 0, 0, .91), rgba(0, 0, 0, .91)), var(--background);
+    background-size: cover;
+    background-position: center
+}
+
+.manifesto h2 {
+    position: relative;
+    z-index: 1
+}
+
+.manifesto:before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    background: var(--background) center/cover no-repeat;
+    filter: brightness(.72);
+    opacity: 0;
+    transition: opacity .22s ease;
+    mask-image: radial-gradient(circle 245px at var(--spot-x) var(--spot-y), #000 0, #000 18%, rgba(0, 0, 0, .82) 42%, transparent 78%);
+    -webkit-mask-image: radial-gradient(circle 245px at var(--spot-x) var(--spot-y), #000 0, #000 18%, rgba(0, 0, 0, .82) 42%, transparent 78%)
+}
+
+/* Technical model callouts shown in the supplied hover recording. */
+.model-tech {
+    position: absolute;
+    z-index: 2;
+    inset: 0;
+    color: #fff;
+    pointer-events: none;
+    text-transform: uppercase;
+    text-shadow: 0 1px 7px rgba(0, 0, 0, .72);
+    opacity: 0;
+    transition: opacity .28s ease
+}
+
+.model-tech b {
+    position: absolute;
+    width: 33%;
+    font: 400 clamp(9px, 2.8cqw, 18px)/1.32 var(--sans);
+    letter-spacing: 0;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(5px);
+    transition: opacity .25s ease, transform .38s cubic-bezier(.22, .61, .36, 1)
+}
+
+.model-tech strong,
+.model-tech span {
+    display: block
+}
+
+.model-tech strong {
+    font-weight: 700
+}
+
+.model-tech b:before,
+.model-tech b:after {
+    content: counter(model-leader);
+    position: absolute;
+    display: block;
+    font-size: 0;
+    background: rgba(255, 255, 255, .96);
+    transition: transform .42s cubic-bezier(.22, .61, .36, 1) .1s
+}
+
+/* Resolute Black and Blue: calibrated to the 640px reference cards. */
+.model-tech--0 b:nth-child(1),
+.model-tech--1 b:nth-child(1) {
+    left: 7%;
+    top: 10%;
+    width: 31%
+}
+
+.model-tech--0 b:nth-child(1):after,
+.model-tech--1 b:nth-child(1):after {
+    left: 100%;
+    top: 52%;
+    width: 12cqw;
+    height: 2px;
+    transform: scaleX(0);
+    transform-origin: left
+}
+
+.model-tech--0 b:nth-child(1):before,
+.model-tech--1 b:nth-child(1):before {
+    left: calc(100% + 12cqw);
+    top: 52%;
+    width: 2px;
+    height: 12cqw;
+    transform: scaleY(0);
+    transform-origin: top
+}
+
+.model-tech--0 b:nth-child(2),
+.model-tech--1 b:nth-child(2) {
+    right: 1.5%;
+    top: 22%;
+    width: 34%
+}
+
+.model-tech--0 b:nth-child(2):after,
+.model-tech--1 b:nth-child(2):after {
+    left: -2cqw;
+    top: -4cqw;
+    width: 16cqw;
+    height: 2px;
+    transform: scaleX(0);
+    transform-origin: left
+}
+
+.model-tech--0 b:nth-child(2):before,
+.model-tech--1 b:nth-child(2):before {
+    left: -2cqw;
+    top: -4cqw;
+    width: 2px;
+    height: 8cqw;
+    transform: scaleY(0);
+    transform-origin: top
+}
+
+.model-tech--0 b:nth-child(3),
+.model-tech--1 b:nth-child(3) {
+    left: 2%;
+    bottom: 19%;
+    width: 34%
+}
+
+.model-tech--0 b:nth-child(3):after,
+.model-tech--1 b:nth-child(3):after {
+    left: 45%;
+    bottom: calc(100% + 13cqw);
+    width: 12cqw;
+    height: 2px;
+    transform: scaleX(0);
+    transform-origin: left
+}
+
+.model-tech--0 b:nth-child(3):before,
+.model-tech--1 b:nth-child(3):before {
+    left: 45%;
+    bottom: 100%;
+    width: 2px;
+    height: 13cqw;
+    transform: scaleY(0);
+    transform-origin: bottom
+}
+
+.model-tech--0 b:nth-child(4),
+.model-tech--1 b:nth-child(4) {
+    right: 9%;
+    bottom: 13%;
+    width: 18%
+}
+
+.model-tech--0 b:nth-child(4):after,
+.model-tech--1 b:nth-child(4):after {
+    right: 100%;
+    bottom: calc(100% + 6cqw);
+    width: 12cqw;
+    height: 2px;
+    transform: scaleX(0);
+    transform-origin: right
+}
+
+.model-tech--0 b:nth-child(4):before,
+.model-tech--1 b:nth-child(4):before {
+    right: calc(100% + 12cqw);
+    bottom: 100%;
+    width: 2px;
+    height: 6cqw;
+    transform: scaleY(0);
+    transform-origin: bottom
+}
+
+/* Resolute Brown uses the raised movement label from its reference. */
+.model-tech--2 b:nth-child(1) {
+    left: 7%;
+    top: 9%;
+    width: 33%
+}
+
+.model-tech--2 b:nth-child(1):after {
+    left: 100%;
+    top: 35%;
+    width: 12cqw;
+    height: 2px;
+    transform: scaleX(0);
+    transform-origin: left
+}
+
+.model-tech--2 b:nth-child(1):before {
+    left: calc(100% + 12cqw);
+    top: 35%;
+    width: 2px;
+    height: 15cqw;
+    transform: scaleY(0);
+    transform-origin: top
+}
+
+.model-tech--2 b:nth-child(2) {
+    right: 2%;
+    top: 5%;
+    width: 32%
+}
+
+.model-tech--2 b:nth-child(2):after {
+    left: -6cqw;
+    top: 15cqw;
+    width: 14cqw;
+    height: 2px;
+    transform: scaleX(0);
+    transform-origin: left
+}
+
+.model-tech--2 b:nth-child(2):before {
+    left: -6cqw;
+    top: 15cqw;
+    width: 2px;
+    height: 8cqw;
+    transform: scaleY(0);
+    transform-origin: top
+}
+
+.model-tech--2 b:nth-child(3) {
+    left: 2%;
+    bottom: 18%;
+    width: 34%
+}
+
+.model-tech--2 b:nth-child(3):after {
+    left: 46%;
+    bottom: calc(100% + 13cqw);
+    width: 12cqw;
+    height: 2px;
+    transform: scaleX(0);
+    transform-origin: left
+}
+
+.model-tech--2 b:nth-child(3):before {
+    left: 46%;
+    bottom: 100%;
+    width: 2px;
+    height: 13cqw;
+    transform: scaleY(0);
+    transform-origin: bottom
+}
+
+.model-tech--2 b:nth-child(4) {
+    right: 9%;
+    bottom: 12%;
+    width: 18%
+}
+
+.model-tech--2 b:nth-child(4):after {
+    right: 100%;
+    bottom: calc(100% + 6cqw);
+    width: 12cqw;
+    height: 2px;
+    transform: scaleX(0);
+    transform-origin: right
+}
+
+.model-tech--2 b:nth-child(4):before {
+    right: calc(100% + 12cqw);
+    bottom: 100%;
+    width: 2px;
+    height: 6cqw;
+    transform: scaleY(0);
+    transform-origin: bottom
+}
+
+/* Lumina Gold, Rose Gold and Silver. */
+.model-tech--3,
+.model-tech--4 {
+    color: #fff;
+    text-shadow: 0 1px 8px rgba(255, 255, 255, .48)
+}
+
+.model-tech--3 b:nth-child(1),
+.model-tech--4 b:nth-child(1),
+.model-tech--5 b:nth-child(1) {
+    left: 7%;
+    top: 11%;
+    width: 31%
+}
+
+.model-tech--3 b:nth-child(1):after,
+.model-tech--4 b:nth-child(1):after,
+.model-tech--5 b:nth-child(1):after {
+    left: 100%;
+    top: 58%;
+    width: 10cqw;
+    height: 2px;
+    transform: scaleX(0);
+    transform-origin: left
+}
+
+.model-tech--3 b:nth-child(1):before,
+.model-tech--4 b:nth-child(1):before,
+.model-tech--5 b:nth-child(1):before {
+    left: calc(100% + 10cqw);
+    top: 58%;
+    width: 2px;
+    height: 12cqw;
+    transform: scaleY(0);
+    transform-origin: top
+}
+
+.model-tech--3 b:nth-child(2),
+.model-tech--4 b:nth-child(2),
+.model-tech--5 b:nth-child(2) {
+    right: 0%;
+    top: 38%;
+    width: 34%
+}
+
+.model-tech--3 b:nth-child(2):after,
+.model-tech--4 b:nth-child(2):after,
+.model-tech--5 b:nth-child(2):after {
+    left: -6cqw;
+    top: -6cqw;
+    width: 18cqw;
+    height: 2px;
+    transform: scaleX(0);
+    transform-origin: left
+}
+
+.model-tech--3 b:nth-child(2):before,
+.model-tech--4 b:nth-child(2):before,
+.model-tech--5 b:nth-child(2):before {
+    left: calc(-6cqw + 18cqw);
+    top: -6cqw;
+    width: 2px;
+    height: 5cqw;
+    transform: scaleY(0);
+    transform-origin: top
+}
+
+.model-tech--3 b:nth-child(3),
+.model-tech--4 b:nth-child(3),
+.model-tech--5 b:nth-child(3) {
+    left: 4%;
+    bottom: 20%;
+    width: 34%
+}
+
+.model-tech--3 b:nth-child(3):after,
+.model-tech--4 b:nth-child(3):after,
+.model-tech--5 b:nth-child(3):after {
+    left: 65%;
+    bottom: calc(100% + 18cqw);
+    width: 12cqw;
+    height: 2px;
+    transform: scaleX(0);
+    transform-origin: left
+}
+
+.model-tech--3 b:nth-child(3):before,
+.model-tech--4 b:nth-child(3):before,
+.model-tech--5 b:nth-child(3):before {
+    left: 64%;
+    bottom: 100%;
+    width: 2px;
+    height: ;
+    height: 18cqw;
+    transform: scaleY(0);
+    transform-origin: bottom;
+}
+
+.model-tech--3 b:nth-child(4),
+.model-tech--4 b:nth-child(4) {
+    right: 34%;
+    bottom: 17%;
+    width: 15%
+}
+
+.model-tech--5 b:nth-child(4) {
+    right: 22%;
+    bottom: 18%;
+    width: 17%
+}
+
+.model-tech--3 b:nth-child(4):after,
+.model-tech--4 b:nth-child(4):after,
+.model-tech--5 b:nth-child(4):after {
+    right: 100%;
+    bottom: calc(100% + 6cqw);
+    width: 8cqw;
+    height: 2px;
+    transform: scaleX(0);
+    transform-origin: right
+}
+
+.model-tech--3 b:nth-child(4):before,
+.model-tech--4 b:nth-child(4):before,
+.model-tech--5 b:nth-child(4):before {
+    right: calc(100% + 8cqw);
+    bottom: 100%;
+    width: 2px;
+    height: 6cqw;
+    transform: scaleY(0);
+    transform-origin: bottom
+}
+
+/* Final leader calibration from the six supplied 640px references. */
+.model-tech--0 b:nth-child(2):before {
+    height: 3.5cqw
+}
+
+.model-tech--2 b:nth-child(2):after {
+    left: 1cqw;
+    top: 15cqw;
+    width: 14cqw
+}
+
+.model-tech--2 b:nth-child(2):before {
+    left: 1cqw;
+    top: 15cqw
+}
+
+.model-tech--3 b:nth-child(1):after {
+    top: 100%
+}
+
+.model-tech--3 b:nth-child(1):before {
+    top: 100%
+}
+
+.model-tech--4 b:nth-child(1):after,
+.model-tech--5 b:nth-child(1):after {
+    top: calc(100% + 1cqw)
+}
+
+.model-tech--4 b:nth-child(1):before,
+.model-tech--5 b:nth-child(1):before {
+    top: calc(100% + 1cqw)
+}
+
+.model-tech--3 b:nth-child(2):after,
+.model-tech--4 b:nth-child(2):after {
+    left: -5cqw;
+    top: -6cqw;
+    width: 18cqw
+}
+
+.model-tech--3 b:nth-child(2):before,
+.model-tech--4 b:nth-child(2):before {
+    left: 13cqw;
+    top: -6cqw;
+    height: 5cqw
+}
+
+.model-tech--5 b:nth-child(2) {
+    right: 0%;
+    top: 22%;
+    width: 34%
+}
+
+.model-tech--5 b:nth-child(2):after {
+    left: -12cqw;
+    top: -8cqw;
+    width: 21cqw
+}
+
+.model-tech--5 b:nth-child(2):before {
+    left: -12cqw;
+    top: -8cqw;
+    height: 15.5cqw
+}
+
+.model-tech--0 b:nth-child(4),
+.model-tech--1 b:nth-child(4),
+.model-tech--2 b:nth-child(4) {
+    left: 68%;
+    right: auto;
+    top: 80%;
+    bottom: auto;
+    width: 14%
+}
+
+.model-tech--0 b:nth-child(4):after,
+.model-tech--1 b:nth-child(4):after,
+.model-tech--2 b:nth-child(4):after {
+    right: calc(100% + 3cqw);
+    top: 3cqw;
+    bottom: auto;
+    width: 12cqw
+}
+
+.model-tech--0 b:nth-child(4):before,
+.model-tech--1 b:nth-child(4):before,
+.model-tech--2 b:nth-child(4):before {
+    right: calc(100% + 15cqw);
+    top: -6cqw;
+    bottom: auto;
+    height: 9cqw;
+    transform-origin: top
+}
+
+.model-tech--3 b:nth-child(4),
+.model-tech--4 b:nth-child(4) {
+    left: 56%;
+    right: auto;
+    top: 76%;
+    bottom: auto;
+    width: 14%
+}
+
+.model-tech--3 b:nth-child(4):after,
+.model-tech--4 b:nth-child(4):after {
+    right: calc(100% + 2cqw);
+    top: 3.5cqw;
+    bottom: auto;
+    width: 7.5cqw
+}
+
+.model-tech--3 b:nth-child(4):before,
+.model-tech--4 b:nth-child(4):before {
+    right: calc(100% + 9.5cqw);
+    top: -11cqw;
+    bottom: auto;
+    height: 14.5cqw;
+    transform-origin: top
+}
+
+.model-tech--5 b:nth-child(4) {
+    left: 67%;
+    right: auto;
+    top: 75%;
+    bottom: auto;
+    width: 17%
+}
+
+.model-tech--5 b:nth-child(4):after {
+    right: calc(100% + 2cqw);
+    top: 3cqw;
+    bottom: auto;
+    width: 12.5cqw
+}
+
+.model-tech--5 b:nth-child(4):before {
+    right: calc(100% + 14.5cqw);
+    top: -6cqw;
+    bottom: auto;
+    height: 9cqw;
+    transform-origin: top
+}
+
+.model-card:hover .model-tech {
+    opacity: 1
+}
+
+.model-card:hover .model-tech b {
+    opacity: 1;
+    transform: none
+}
+
+.model-card:hover .model-tech b:after {
+    transform: scaleX(1)
+}
+
+.model-card:hover .model-tech b:before {
+    transform: scaleY(1)
+}
+
+.model-card:hover .model-tech b:nth-child(2) {
+    transition-delay: .06s
+}
+
+.model-card:hover .model-tech b:nth-child(3) {
+    transition-delay: .12s
+}
+
+.model-card:hover .model-tech b:nth-child(4) {
+    transition-delay: .18s
+}
+
+@media (hover:none) {
+    .model-tech {
+        display: none
+    }
+}
+
+@media (prefers-reduced-motion:reduce) {
+
+    .model-card img,
+    .model-card>span,
+    .model-tech,
+    .model-tech b,
+    .model-tech b:before,
+    .model-tech b:after {
+        transition-duration: .01ms
+    }
+}
+
+.manifesto.is-spotlit:before {
+    opacity: 1
+}
+
+.manifesto:before {
+    z-index: 0
+}
+
+/* Refined third-section spotlight. */
+.manifesto {
+    background-image: linear-gradient(rgba(0, 0, 0, .96), rgba(0, 0, 0, .85)), var(--background);
+    background-size: 100% 100%, contain;
+    background-position: center;
+}
+
+.manifesto:before {
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    mask-image: radial-gradient(circle 155px at var(--spot-x) var(--spot-y), #000 0, #000 14%, rgba(0, 0, 0, .78) 40%, transparent 78%);
+    -webkit-mask-image: radial-gradient(circle 155px at var(--spot-x) var(--spot-y), #000 0, #000 14%, rgba(0, 0, 0, .78) 40%, transparent 78%)
+}
+
+/* Shared proportional dark-visual treatment. */
+.manifesto,
+.visit {
+    --spot-x: 50%;
+    --spot-y: 50%;
+    position: relative;
+    isolation: isolate;
+    animation: none;
+    background-image: linear-gradient(rgba(0,0,0,.96), rgba(0,0,0,.88)), var(--background), var(--background);
+    background-size: 100% 100%, contain, cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden
+}
+
+.visit {
+    --background: url('assets/new-images/optimized/visit-watch-background.webp') !important;
+    background-image: linear-gradient(rgba(0,0,0,.88), rgba(0,0,0,.82)), var(--background), var(--background)
+}
+
+.manifesto > *,
+.visit > * {
+    position: relative;
+    z-index: 1
+}
+
+.manifesto:before,
+.visit:before {
+    content: counter(dark-visual-spotlight);
+    position: absolute;
+    z-index: 0;
+    inset: 0;
+    font-size: 0;
+    background-image: var(--background), var(--background);
+    background-size: contain, cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: brightness(.74);
+    opacity: 0;
+    transition: opacity .22s ease;
+    mask-image: radial-gradient(circle 155px at var(--spot-x) var(--spot-y), #000 0, #000 14%, rgba(0,0,0,.78) 40%, transparent 78%);
+    -webkit-mask-image: radial-gradient(circle 155px at var(--spot-x) var(--spot-y), #000 0, #000 14%, rgba(0,0,0,.78) 40%, transparent 78%)
+}
+
+.manifesto.is-spotlit:before,
+.visit.is-spotlit:before {
+    opacity: 1
+}
+
+@media (prefers-reduced-motion:reduce) {
+    .manifesto:before,
+    .visit:before {
+        transition: none
+    }
+}
