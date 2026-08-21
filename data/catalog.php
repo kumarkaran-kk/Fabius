@@ -85,3 +85,20 @@ function fabius_products_for(string $audience): array
     }
     return $items;
 }
+
+function fabius_products_by_movement(string $movement): array
+{
+    $items = [];
+    foreach (fabius_catalog() as $slug => $product) {
+        $productMovement = $product['product_data']['Movement'] ?? '';
+        if (stripos($productMovement, $movement) !== false) $items[] = ['slug' => $slug] + $product;
+    }
+    return $items;
+}
+
+function fabius_all_products(): array
+{
+    $items = [];
+    foreach (fabius_catalog() as $slug => $product) $items[] = ['slug' => $slug] + $product;
+    return $items;
+}

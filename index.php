@@ -115,7 +115,7 @@ $models = array_map(fn($slug, $product) => ['slug' => $slug] + $product, array_k
       <div class="feature-image reveal"><img src="<?= $assets['feature'] ?>" alt="Fabius Lumina gold watch campaign"></div>
       <div class="feature-copy reveal">
         <h2>Small pleasures<br>from Reprizo</h2>
-        <p>We transparently build high-quality minimal watches from the finest components and materials.</p><a class="button" href="#collections">Explore</a>
+        <p>We create considered timepieces where precision, purpose and enduring design become part of life’s defining moments.</p><a class="button" href="house-of-fabius.php">Our Story</a>
       </div>
     </section>
 
