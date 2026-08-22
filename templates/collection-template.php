@@ -21,6 +21,7 @@ $products = match ($collectionKey) {
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Fabius <?= htmlspecialchars($config['title']) ?> collection."><title>Fabius <?= htmlspecialchars($config['title']) ?></title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Libre+Baskerville:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/pdp.css"><link rel="stylesheet" href="assets/css/header.css"><link rel="stylesheet" href="assets/css/collection.css"><link rel="stylesheet" href="assets/css/collection-spotlight.css"><link rel="stylesheet" href="assets/css/collections-hub.css">
@@ -34,6 +35,6 @@ $products = match ($collectionKey) {
     <?php if ($products): ?><div class="collection-product-grid"><?php foreach ($products as $product): ?><a href="product.php?slug=<?= urlencode($product['slug']) ?>" class="collection-product"><div><img src="<?= htmlspecialchars($product['model_image']) ?>" alt="Fabius <?= htmlspecialchars($product['name']) ?> watch"></div><small><?= htmlspecialchars($product['subtitle']) ?></small><h3>Fabius <?= htmlspecialchars($product['name']) ?></h3><p><?= htmlspecialchars($product['price']) ?></p><b>View&nbsp; →</b></a><?php endforeach; ?></div>
     <?php else: ?><div class="collection-empty"><span>By Invitation of Time</span><p>No limited-edition timepiece has been announced. Explore the current collections while the next exceptional chapter takes shape.</p><a href="collections.php">Explore Collections&nbsp; →</a></div><?php endif; ?>
   </section>
-  <section class="collection-portal" style="--portal-background:url('<?= htmlspecialchars($config['hero']) ?>')"><span>Official Retail Partner</span><h2>Continue your<br><em>acquisition</em></h2><p>Purchasing is completed securely through our official retail portal.</p><a href="https://www.indiekonnect.com/" target="_blank" rel="noopener noreferrer">Visit IndieKonnect&nbsp; ↗</a></section>
+  <section class="collection-portal" style="--portal-background:url('/<?= htmlspecialchars(ltrim($config['hero'], '/')) ?>')"><span>Official Retail Partner</span><h2>Continue your<br><em>acquisition</em></h2><p>Purchasing is completed securely through our official retail portal.</p><a href="https://www.indiekonnect.com/" target="_blank" rel="noopener noreferrer">Visit IndieKonnect&nbsp; ↗</a></section>
 </main><?php require dirname(__DIR__) . '/includes/footer.php'; ?><script src="assets/js/pdp.js"></script>
 </body></html>

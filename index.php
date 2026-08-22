@@ -37,6 +37,7 @@ $models = array_map(fn($slug, $product) => ['slug' => $slug] + $product, array_k
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Fabius precision watches — crafted for those who value every moment.">
   <title>Fabius Watches</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
@@ -52,7 +53,7 @@ $models = array_map(fn($slug, $product) => ['slug' => $slug] + $product, array_k
   <main id="top">
     <section class="hero" aria-label="Featured watches">
       <?php foreach ($heroSlides as $index => $slide): ?>
-        <article class="hero-slide<?= $index === 0 ? ' is-active' : '' ?>" data-slug="<?= htmlspecialchars($slide['slug']) ?>" style="--hero:url('<?= htmlspecialchars($slide['image_url']) ?>')">
+        <article class="hero-slide<?= $index === 0 ? ' is-active' : '' ?>" data-slug="<?= htmlspecialchars($slide['slug']) ?>" style="--hero:url('/<?= htmlspecialchars(ltrim($slide['image_url'], '/')) ?>')">
           <div class="hero-copy">
             <span class="eyebrow hero-brand">Fabius</span>
             <h1><?= htmlspecialchars($slide['tone']) ?></h1>
@@ -72,7 +73,7 @@ $models = array_map(fn($slug, $product) => ['slug' => $slug] + $product, array_k
       <a class="category-card" href="womens-watches.php"><img src="<?= $assets['promo_women'] ?>" alt="Woman wearing a gold Fabius watch"><span>More</span></a>
     </section>
 
-    <section class="manifesto dark-visual reveal" style="--background:url('<?= $assets['banner'] ?>')">
+    <section class="manifesto dark-visual reveal" style="--background:url('/<?= ltrim($assets['banner'], '/') ?>')">
       <h2><strong>Crafted</strong> <em>for</em><br><strong>those</strong> <em>who</em> <strong>value</strong><br><em>Every</em> <strong>moment</strong></h2>
     </section>
 
@@ -120,7 +121,7 @@ $models = array_map(fn($slug, $product) => ['slug' => $slug] + $product, array_k
       </div>
     </section>
 
-    <section class="visit dark-visual reveal" style="--background:url('<?= $assets['banner'] ?>')">
+    <section class="visit dark-visual reveal" style="--background:url('/<?= ltrim($assets['visit_banner'], '/') ?>')">
       <div>
         <h2><em>Your</em> Specialist<br>Watch <em>Store</em></h2>
         <p>Need a closer look? Come visit us in store</p><a class="button button-light" href="#footer">Discover</a>

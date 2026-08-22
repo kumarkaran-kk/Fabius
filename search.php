@@ -11,6 +11,7 @@ $results = $query === '' ? $products : array_values(array_filter($products, func
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Search the Fabius watch collection."><title>Search Fabius Watches</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Libre+Baskerville:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/pdp.css"><link rel="stylesheet" href="assets/css/header.css"><link rel="stylesheet" href="assets/css/search.css">
