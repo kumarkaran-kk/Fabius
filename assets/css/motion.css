@@ -1033,7 +1033,7 @@
 }
 
 .visit {
-    --background: url('assets/new-images/optimized/visit-watch-background.webp') !important;
+    --background: url('../new-images/optimized/visit-watch-background.webp') !important;
     background-image: linear-gradient(rgba(0,0,0,.88), rgba(0,0,0,.82)), var(--background), var(--background)
 }
 

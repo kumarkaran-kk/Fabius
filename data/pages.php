@@ -60,7 +60,7 @@ function fabius_editorial_pages(): array
             'intro' => ['Mechanical and quartz movements express time differently. One reveals energy through an intricate living mechanism; the other delivers composed accuracy through modern engineering.', 'Neither is defined by spectacle alone. The right movement is the one that suits how its wearer lives, values and experiences time.'],
             'sections' => [
                 ['number' => '01', 'title' => 'Automatic', 'body' => ['An automatic movement is powered by motion and rewards a close relationship with the watch. In the Resolute collection, skeleton architecture turns its mechanics into a continuously changing display.']],
-                ['number' => '02', 'title' => 'Quartz', 'body' => ['Quartz timekeeping offers dependable accuracy and effortless daily ownership. The Lumina collection pairs Japanese quartz movements with refined 30mm proportions and luminous mother-of-pearl dials.']],
+                ['number' => '02', 'title' => 'Quartz Slim', 'body' => ['Quartz Slim timekeeping offers dependable accuracy and effortless daily ownership. The Lumina collection pairs slim quartz movements with refined 30mm proportions and luminous mother-of-pearl dials.']],
                 ['number' => '03', 'title' => 'Beyond Measurement', 'body' => ['A timepiece becomes meaningful through use: the meeting it accompanies, the celebration it marks, and the memories gathered around it.']],
             ],
             'links' => [['label' => 'Explore Automatic', 'href' => 'automatic-watches.php'], ['label' => 'Explore Quartz', 'href' => 'quartz-watches.php']],

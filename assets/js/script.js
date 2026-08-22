@@ -145,7 +145,7 @@
   showCollection(0);
 
   const reviewQuotes = [
-    '“I had a really nice ring that was too loose for my finger but Reprizo resized it in an hour and now it’s a perfect size. Thanks, guys, you’re the best masters!”',
+    '“I had a really nice ring that was too loose for my finger but Fabius resized it in an hour and now it’s a perfect size. Thanks, guys, you’re the best masters!”',
     '“The finish is beautiful and the exposed movement gets compliments every time I wear it.”',
     '“Elegant, comfortable and even better in person. The service felt every bit as premium as the watch.”'
   ];

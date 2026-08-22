@@ -40,13 +40,14 @@ $models = array_map(fn($slug, $product) => ['slug' => $slug] + $product, array_k
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <link rel='stylesheet' href='motion.css'>
-  <link rel="stylesheet" href="header.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/motion.css">
+  <link rel="stylesheet" href="assets/css/header.css">
 </head>
 
 <body>
-  <?php $pageType = 'home'; require __DIR__ . '/header.php'; ?>
+  <?php $pageType = 'home';
+  require __DIR__ . '/includes/header.php'; ?>
 
   <main id="top">
     <section class="hero" aria-label="Featured watches">
@@ -114,7 +115,7 @@ $models = array_map(fn($slug, $product) => ['slug' => $slug] + $product, array_k
     <section class="feature" id="story">
       <div class="feature-image reveal"><img src="<?= $assets['feature'] ?>" alt="Fabius Lumina gold watch campaign"></div>
       <div class="feature-copy reveal">
-        <h2>Small pleasures<br>from Reprizo</h2>
+        <h2>Small pleasures<br>from Fabius</h2>
         <p>We create considered timepieces where precision, purpose and enduring design become part of life’s defining moments.</p><a class="button" href="house-of-fabius.php">Our Story</a>
       </div>
     </section>
@@ -132,14 +133,14 @@ $models = array_map(fn($slug, $product) => ['slug' => $slug] + $product, array_k
       </header>
       <div class="review-box reveal"><button class="review-arrow" data-review="prev" aria-label="Previous review">←</button>
         <div class="review-content"><img src="<?= $assets['reviewer'] ?>" alt="Fabius customer">
-          <blockquote>“I had a really nice ring that was too loose for my finger but Reprizo resized it in an hour and now it’s a perfect size. Thanks, guys, you’re the best masters!”</blockquote>
+          <blockquote>“I had a really nice ring that was too loose for my finger but Fabius resized it in an hour and now it’s a perfect size. Thanks, guys, you’re the best masters!”</blockquote>
         </div><button class="review-arrow" data-review="next" aria-label="Next review">→</button>
       </div>
     </section>
   </main>
 
-  <?php require __DIR__ . '/footer.php'; ?>
-  <script src="script.js"></script>
+  <?php require __DIR__ . '/includes/footer.php'; ?>
+  <script src="assets/js/script.js"></script>
 </body>
 
 </html>

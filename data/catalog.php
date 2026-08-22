@@ -12,7 +12,7 @@ function fabius_catalog(): array
     $commonLuminaSpecs = [
         'Case' => ['Shape' => 'Round', 'Dimension' => 'Ø 30.00 mm', 'Water Resistance' => '5ATM', 'Glass' => 'Flat sapphire crystal'],
         'Dial & Hands' => ['Dial type' => 'Mother of pearl', 'Hands' => 'Polished', 'Hour markers' => 'Crystal indices'],
-        'Movement & Functions' => ['Movement Type' => 'Japanese Quartz', 'Functions' => 'Hours and minutes'],
+        'Movement & Functions' => ['Movement Type' => 'Quartz Slim', 'Functions' => 'Hours and minutes'],
         'Bracelet' => ['Material' => 'Stainless steel', 'Buckle' => 'Folding clasp'],
     ];
 
@@ -46,26 +46,26 @@ function fabius_catalog(): array
         ],
         'lumina-gold' => [
             'name' => 'Lumina Gold', 'collection' => 'Lumina', 'tone' => 'Gold', 'audience' => 'women', 'price' => $price,
-            'subtitle' => 'Japanese Quartz · 30mm', 'search' => 'lumina gold japanese quartz 30mm women mother pearl bracelet',
+            'subtitle' => 'Quartz Slim · 30mm', 'search' => 'lumina gold quartz slim 30mm women mother pearl bracelet',
             'description' => 'A luminous gold-plated 30mm timepiece with a mother-of-pearl dial, crystal hour markers, and refined integrated bracelet.',
             'model_image' => $base . 'model-lumina-gold.webp', 'collection_image' => $base . 'model-lumina-gold.webp', 'hero_image' => $base . 'model-lumina-gold.webp',
-            'gallery' => [$base . 'model-lumina-gold.webp'], 'product_data' => ['Movement' => 'Japanese Quartz', 'Case Size' => '30mm', 'Bracelet' => 'Stainless Steel', 'Water Resistance' => '5ATM', 'Glass' => 'Flat Sapphire Crystal'],
+            'gallery' => [$base . 'model-lumina-gold.webp'], 'product_data' => ['Movement' => 'Quartz Slim', 'Case Size' => '30mm', 'Bracelet' => 'Stainless Steel', 'Water Resistance' => '5ATM', 'Glass' => 'Flat Sapphire Crystal'],
             'specs' => array_replace_recursive($commonLuminaSpecs, ['Dial & Hands' => ['Dial color' => 'Pink mother of pearl'], 'Bracelet' => ['Color' => 'Gold plated']]),
         ],
         'lumina-rose-gold' => [
             'name' => 'Lumina Rose Gold', 'collection' => 'Lumina', 'tone' => 'Rose Gold', 'audience' => 'women', 'price' => $price,
-            'subtitle' => 'Japanese Quartz · 30mm', 'search' => 'lumina rose gold japanese quartz 30mm women mother pearl bracelet',
+            'subtitle' => 'Quartz Slim · 30mm', 'search' => 'lumina rose gold quartz slim 30mm women mother pearl bracelet',
             'description' => 'Warm rose-gold tones frame a radiant mother-of-pearl dial in an elegant 30mm silhouette designed for modern refinement.',
             'model_image' => $base . 'model-lumina-rose-gold.webp', 'collection_image' => $base . 'model-lumina-rose-gold.webp', 'hero_image' => $base . 'model-lumina-rose-gold.webp',
-            'gallery' => [$base . 'model-lumina-rose-gold.webp'], 'product_data' => ['Movement' => 'Japanese Quartz', 'Case Size' => '30mm', 'Bracelet' => 'Stainless Steel', 'Water Resistance' => '5ATM', 'Glass' => 'Flat Sapphire Crystal'],
+            'gallery' => [$base . 'model-lumina-rose-gold.webp'], 'product_data' => ['Movement' => 'Quartz Slim', 'Case Size' => '30mm', 'Bracelet' => 'Stainless Steel', 'Water Resistance' => '5ATM', 'Glass' => 'Flat Sapphire Crystal'],
             'specs' => array_replace_recursive($commonLuminaSpecs, ['Dial & Hands' => ['Dial color' => 'Pink mother of pearl'], 'Bracelet' => ['Color' => 'Rose gold']]),
         ],
         'lumina-silver' => [
             'name' => 'Lumina Silver', 'collection' => 'Lumina', 'tone' => 'Silver', 'audience' => 'women', 'price' => $price,
-            'subtitle' => 'Japanese Quartz · 30mm', 'search' => 'lumina silver japanese quartz 30mm women mother pearl bracelet',
+            'subtitle' => 'Quartz Slim · 30mm', 'search' => 'lumina silver quartz slim 30mm women mother pearl bracelet',
             'description' => 'Cool stainless steel surrounds an iridescent mother-of-pearl dial for a composed, contemporary expression of elegance.',
             'model_image' => $base . 'model-lumina-silver.webp', 'collection_image' => $base . 'model-lumina-silver.webp', 'hero_image' => $base . 'model-lumina-silver.webp',
-            'gallery' => [$base . 'model-lumina-silver.webp'], 'product_data' => ['Movement' => 'Japanese Quartz', 'Case Size' => '30mm', 'Bracelet' => 'Stainless Steel', 'Water Resistance' => '5ATM', 'Glass' => 'Flat Sapphire Crystal'],
+            'gallery' => [$base . 'model-lumina-silver.webp'], 'product_data' => ['Movement' => 'Quartz Slim', 'Case Size' => '30mm', 'Bracelet' => 'Stainless Steel', 'Water Resistance' => '5ATM', 'Glass' => 'Flat Sapphire Crystal'],
             'specs' => array_replace_recursive($commonLuminaSpecs, ['Dial & Hands' => ['Dial color' => 'Dark mother of pearl'], 'Bracelet' => ['Color' => 'Silver']]),
         ],
     ];

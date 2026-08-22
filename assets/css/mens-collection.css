@@ -1,0 +1,3 @@
+.collection-page--men .collection-hero > img {
+    transform: translateX(2.5%) scale(1.05);
+}

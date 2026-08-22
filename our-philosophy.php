@@ -1,1 +1,1 @@
-<?php $pageKey = 'philosophy'; require __DIR__ . '/editorial-template.php';
+<?php $pageKey = 'philosophy'; require __DIR__ . '/templates/editorial-template.php';

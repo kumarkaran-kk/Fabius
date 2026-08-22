@@ -1,1 +1,1 @@
-<?php $pageKey = 'warranty'; require __DIR__ . '/editorial-template.php';
+<?php $pageKey = 'warranty'; require __DIR__ . '/templates/editorial-template.php';

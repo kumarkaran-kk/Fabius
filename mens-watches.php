@@ -1,1 +1,1 @@
-<?php $collectionKey = 'men'; require __DIR__ . '/collection-template.php';
+<?php $collectionKey = 'men'; require __DIR__ . '/templates/collection-template.php';

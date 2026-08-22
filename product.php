@@ -14,11 +14,11 @@ $relatedProducts = array_slice(array_values(array_filter(array_map(fn($itemSlug,
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Libre+Baskerville:ital,wght@0,400;1,400&family=Pinyon+Script&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="pdp.css">
-  <link rel="stylesheet" href="header.css">
+  <link rel="stylesheet" href="assets/css/pdp.css">
+  <link rel="stylesheet" href="assets/css/header.css">
 </head>
 <body>
-  <?php $pageType = 'product'; require __DIR__ . '/header.php'; ?>
+  <?php $pageType = 'product'; require __DIR__ . '/includes/header.php'; ?>
 
   <main>
     <section class="product-hero">
@@ -82,7 +82,7 @@ $relatedProducts = array_slice(array_values(array_filter(array_map(fn($itemSlug,
     </section>
   </main>
 
-  <?php require __DIR__ . '/footer.php'; ?>
-  <script src="pdp.js"></script>
+  <?php require __DIR__ . '/includes/footer.php'; ?>
+  <script src="assets/js/pdp.js"></script>
 </body>
 </html>
