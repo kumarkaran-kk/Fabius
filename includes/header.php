@@ -14,15 +14,15 @@ if (!function_exists('fabius_drawer_navigation')) {
 <?php if ($isInnerPage): ?>
 <header class="pdp-header">
   <button class="pdp-menu" aria-label="Open menu" aria-expanded="false"><i></i><i></i></button>
-  <a class="pdp-logo" href="index.php" aria-label="Fabius home">FABIUS</a>
-  <nav class="pdp-actions header-utilities" aria-label="Utility navigation"><a href="search.php" aria-label="Search Fabius watches" data-label="Search"><span class="utility-icon search-icon"></span></a><a href="https://www.indiekonnect.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit official retail portal, IndieKonnect" data-label="Retail Portal"><span class="utility-icon portal-icon"></span></a></nav>
+  <a class="pdp-logo" href="index.php" aria-label="Fabius home"><img class="brand-logo-image" src="assets/brand/fabius-logo.png" alt="Fabius"></a>
+  <nav class="pdp-actions header-utilities" aria-label="Utility navigation"><a href="search.php" aria-label="Search Fabius watches" data-label="Search"><span class="utility-icon search-icon"></span></a></nav>
   <nav class="pdp-mobile-nav" aria-label="Main navigation"><?php fabius_drawer_navigation(); ?></nav>
 </header>
 <?php else: ?>
 <header class="site-header">
   <button class="icon-button menu-toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
-  <a class="wordmark" href="index.php" aria-label="Fabius home">FABIUS</a>
-  <nav class="desktop-actions header-utilities" aria-label="Utility navigation"><a href="search.php" aria-label="Search Fabius watches" data-label="Search"><span class="utility-icon search-icon"></span></a><a href="https://www.indiekonnect.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit official retail portal, IndieKonnect" data-label="Retail Portal"><span class="utility-icon portal-icon"></span></a></nav>
+  <a class="wordmark" href="index.php" aria-label="Fabius home"><img class="brand-logo-image" src="assets/brand/fabius-logo.png" alt="Fabius"></a>
+  <nav class="desktop-actions header-utilities" aria-label="Utility navigation"><a href="search.php" aria-label="Search Fabius watches" data-label="Search"><span class="utility-icon search-icon"></span></a></nav>
   <nav class="mobile-nav" aria-label="Main navigation"><?php fabius_drawer_navigation(); ?></nav>
 </header>
 <?php endif; ?>

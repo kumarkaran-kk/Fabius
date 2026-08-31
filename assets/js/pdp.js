@@ -20,6 +20,9 @@
   const showImage = index => {
     active = (index + thumbs.length) % thumbs.length;
     const thumb = thumbs[active];
+    image.style.transform = '';
+    image.style.transformOrigin = '50% 50%';
+    image.classList.remove('is-zoomed');
     image.classList.add('is-changing');
     window.setTimeout(() => {
       image.src = thumb.dataset.image;
@@ -56,17 +59,42 @@
     });
   });
 
+  document.querySelectorAll('.directory-card').forEach(card => {
+    card.addEventListener('pointermove', event => {
+      if (window.matchMedia('(hover: none)').matches) return;
+      const bounds = card.getBoundingClientRect();
+      card.style.setProperty('--spot-x', `${((event.clientX - bounds.left) / bounds.width) * 100}%`);
+      card.style.setProperty('--spot-y', `${((event.clientY - bounds.top) / bounds.height) * 100}%`);
+    });
+    card.addEventListener('pointerleave', () => {
+      card.style.setProperty('--spot-x', '50%');
+      card.style.setProperty('--spot-y', '50%');
+    });
+  });
+
   const gallery = document.querySelector('.product-gallery figure');
+  gallery?.addEventListener('pointerenter', event => {
+    if (window.matchMedia('(hover: none)').matches) return;
+    image.classList.add('is-zoomed');
+    const bounds = gallery.getBoundingClientRect();
+    image.style.transformOrigin = `${((event.clientX - bounds.left) / bounds.width) * 100}% ${((event.clientY - bounds.top) / bounds.height) * 100}%`;
+    image.style.transform = 'scale(1.75)';
+  });
   gallery?.addEventListener('pointermove', event => {
     if (window.matchMedia('(hover: none)').matches) return;
     const bounds = gallery.getBoundingClientRect();
-    const x = ((event.clientX - bounds.left) / bounds.width - .5) * 10;
-    const y = ((event.clientY - bounds.top) / bounds.height - .5) * 10;
-    image.style.transform = `scale(1.035) translate(${x * -.25}px, ${y * -.25}px)`;
+    const x = Math.max(0, Math.min(100, ((event.clientX - bounds.left) / bounds.width) * 100));
+    const y = Math.max(0, Math.min(100, ((event.clientY - bounds.top) / bounds.height) * 100));
+    image.style.transformOrigin = `${x}% ${y}%`;
+    image.style.transform = 'scale(1.75)';
   });
-  gallery?.addEventListener('pointerleave', () => image.style.transform = '');
+  gallery?.addEventListener('pointerleave', () => {
+    image.style.transform = '';
+    image.style.transformOrigin = '50% 50%';
+    image.classList.remove('is-zoomed');
+  });
 
-  const footer = document.querySelector('.pdp-footer');
+  const footer = document.querySelector('.site-footer');
   const footerWordmark = footer?.querySelector('.footer-wordmark');
   if (footer && footerWordmark) {
     footerWordmark.dataset.wordmark = footerWordmark.textContent.trim();

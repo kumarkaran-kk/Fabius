@@ -37,13 +37,15 @@ $models = array_map(fn($slug, $product) => ['slug' => $slug] + $product, array_k
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Fabius precision watches — crafted for those who value every moment.">
   <title>Fabius Watches</title>
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/brand/fabius-logo.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/motion.css">
   <link rel="stylesheet" href="assets/css/header.css">
+  <link rel="stylesheet" href="assets/css/footer.css">
+  <link rel="stylesheet" href="assets/css/brand-accents.css">
 </head>
 
 <body>

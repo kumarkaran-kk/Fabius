@@ -1,0 +1,45 @@
+:root{--brand-gold:#b68c35;--brand-gold-soft:#c8a75f;--brand-gold-rgb:182,140,53}
+
+/* Shared editorial labels and active navigation states. */
+.section-heading>span,.collection-copy>.eyebrow,.collection-hero header>span,.collection-products>header>span,.collection-statement>span,.collection-portal>span,.collection-directory>header>span,.directory-card span,.search-intro>span,.editorial-hero-copy>span,.editorial-intro>span{color:var(--brand-gold-soft)}
+.hero-dots button.is-active{background:var(--brand-gold-soft)}
+.progress i.is-active{background:var(--brand-gold-soft);border-color:var(--brand-gold-soft)}
+.collection-controls button:hover,.review-arrow:hover{color:var(--brand-gold)}
+.site-header .mobile-nav a:hover,.pdp-mobile-nav a:hover,.nav-group>div a:hover{color:var(--brand-gold-soft)!important}
+
+/* Collection, search and editorial details. */
+.collection-hero a,.collection-portal a,.collection-product b,.directory-card b,.search-card>span,.search-card b,.result-count{color:var(--brand-gold)}
+.collection-hero a,.collection-portal a{border-color:rgba(var(--brand-gold-rgb),.75)}
+.editorial-page{--gold:var(--brand-gold)}
+.editorial-hero-copy>span,.editorial-intro>span,.editorial-note>span,.editorial-sections article>span{color:var(--brand-gold)}
+.editorial-scroll i{background:var(--brand-gold-soft)}
+.editorial-links a:hover{border-color:var(--brand-gold);background:#111923}
+
+/* PDP: gold appears only in hierarchy, fine rules and selected states. */
+.product-kicker,.product-data-heading>span,.specs>header>span{color:var(--brand-gold)}
+.product-kicker i,.product-ornament,.product-tabs [role=tablist] button.is-active:after,.specs .spec-group:after{background:var(--brand-gold)}
+.product-ornament{background:transparent;color:var(--brand-gold-soft)}
+.product-price-panel{border-color:rgba(var(--brand-gold-rgb),.62)}
+.product-price-panel:before{border:0}.product-price-panel:after{display:none}
+.price-emblem:before,.price-emblem:after{border-color:var(--brand-gold-soft)}
+.purchase-note>span:first-child{border-color:var(--brand-gold);color:var(--brand-gold)}
+.spec-group-heading>span{color:var(--brand-gold-soft)}
+.specs .spec-group:hover{border-color:rgba(var(--brand-gold-rgb),.48)}
+.related-badge{color:#f1e4c4}.related-badge:after,.related-emblem:before,.related-emblem:after,.related-rule:before,.related-rule:after{background:var(--brand-gold-soft)}
+.related-emblem i{border-color:var(--brand-gold)}.related-rule i{background:var(--brand-gold)}
+.related-card .related-view{border-color:rgba(var(--brand-gold-rgb),.7)}
+
+/* Consistent compact price treatment for catalogue and discovery cards. */
+.catalog-price{position:relative;display:grid;width:min(230px,calc(100% - 36px));min-height:76px;margin:22px auto 24px!important;padding:13px 30px 12px;align-content:center;justify-items:center;border-top:1px solid rgba(var(--brand-gold-rgb),.4);border-bottom:1px solid rgba(var(--brand-gold-rgb),.4);background:linear-gradient(90deg,transparent,rgba(var(--brand-gold-rgb),.055),transparent);color:#121b25!important}
+.catalog-price:before,.catalog-price:after{content:"";position:absolute;top:50%;width:5px;height:19px;border-left:1px solid var(--brand-gold-soft);transform:translateY(-50%)}.catalog-price:before{left:7px}.catalog-price:after{right:7px}
+.catalog-price>span{display:block;margin:0 0 7px!important;color:var(--brand-gold)!important;font:600 8px/1 Inter,Arial,sans-serif!important;letter-spacing:2.3px!important;text-transform:uppercase}.catalog-price>strong{display:block;color:#121b25;font:400 clamp(21px,1.7vw,27px)/1 var(--serif);letter-spacing:.015em;white-space:nowrap}
+.related-card .catalog-price{margin:0 auto 27px!important}.collection-product .catalog-price{margin-top:20px!important}.search-card .catalog-price{margin-top:20px!important}
+
+/* Footer echoes the logo without turning the entire interface gold. */
+.site-footer{--footer-accent:var(--brand-gold-soft)}
+.footer-main>section,.footer-main>nav{border-left-color:rgba(var(--brand-gold-rgb),.2)}
+.footer-bottom{border-top-color:rgba(var(--brand-gold-rgb),.55)}
+.footer-bottom:before{background:var(--brand-gold-soft);box-shadow:0 0 18px rgba(var(--brand-gold-rgb),.22)}
+.site-footer .footer-column a:hover{color:var(--brand-gold-soft)}
+
+@media(max-width:560px){.footer-main>section,.footer-main>nav,.footer-main>section:first-child{border-bottom-color:rgba(var(--brand-gold-rgb),.17)}}

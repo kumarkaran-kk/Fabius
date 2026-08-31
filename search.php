@@ -11,10 +11,10 @@ $results = $query === '' ? $products : array_values(array_filter($products, func
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Search the Fabius watch collection."><title>Search Fabius Watches</title>
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/brand/fabius-logo.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Libre+Baskerville:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/pdp.css"><link rel="stylesheet" href="assets/css/header.css"><link rel="stylesheet" href="assets/css/search.css">
+  <link rel="stylesheet" href="assets/css/pdp.css"><link rel="stylesheet" href="assets/css/header.css"><link rel="stylesheet" href="assets/css/search.css"><link rel="stylesheet" href="assets/css/footer.css"><link rel="stylesheet" href="assets/css/brand-accents.css">
 </head>
 <body>
   <?php $pageType = 'search'; require __DIR__ . '/includes/header.php'; ?>
@@ -25,7 +25,7 @@ $results = $query === '' ? $products : array_values(array_filter($products, func
     <section class="search-results" aria-live="polite">
       <p class="result-count"><?= count($results) ?> <?= count($results) === 1 ? 'timepiece' : 'timepieces' ?><?= $query !== '' ? ' found for “' . htmlspecialchars($query) . '”' : ' in the collection' ?></p>
       <?php if ($results): ?><div class="search-grid">
-        <?php foreach ($results as $product): ?><a class="search-card" href="product.php?slug=<?= urlencode($product['slug']) ?>"><div><img src="<?= htmlspecialchars($product['model_image']) ?>" alt="Fabius <?= htmlspecialchars($product['name']) ?> watch"></div><span><?= htmlspecialchars($product['subtitle']) ?></span><h2><?= htmlspecialchars($product['name']) ?></h2><p><?= htmlspecialchars($product['price']) ?></p><b>View Timepiece&nbsp; →</b></a><?php endforeach; ?>
+        <?php foreach ($results as $product): ?><a class="search-card" href="product.php?slug=<?= urlencode($product['slug']) ?>"><div><img src="<?= htmlspecialchars($product['model_image']) ?>" alt="Fabius <?= htmlspecialchars($product['name']) ?> watch"></div><span><?= htmlspecialchars($product['subtitle']) ?></span><h2><?= htmlspecialchars($product['name']) ?></h2><p class="catalog-price"><span>Price</span><strong><?= htmlspecialchars($product['price']) ?></strong></p><b>View Timepiece&nbsp; →</b></a><?php endforeach; ?>
       </div><?php else: ?><div class="empty-results"><h2>No timepiece found</h2><p>Try “Resolute”, “Lumina”, “automatic”, “gold”, or “blue”.</p><a href="search.php">View the complete collection</a></div><?php endif; ?>
     </section>
   </main>
