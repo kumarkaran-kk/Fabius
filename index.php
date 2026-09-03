@@ -21,7 +21,6 @@ $assets = [
   'model_silver' => $imageBase . 'model-lumina-silver.webp',
   'feature' => $imageBase . 'feature-story-portrait.webp',
   'feature_watch' => $imageBase . 'feature-lumina-gold-watch.webp',
-  'reviewer' => $imageBase . 'customer-review-portrait.webp',
 ];
 
 $heroSlides = array_map(fn($slug) => ['slug' => $slug, 'image_url' => $catalog[$slug]['hero_image'], 'tone' => $catalog[$slug]['tone'], 'model' => $catalog[$slug]['collection'], 'copy' => $catalog[$slug]['description']], ['resolute-blue', 'resolute-black', 'resolute-brown']);
@@ -135,8 +134,9 @@ $models = array_map(fn($slug, $product) => ['slug' => $slug] + $product, array_k
         <h2>Customer Reviews</h2>
       </header>
       <div class="review-box reveal"><button class="review-arrow" data-review="prev" aria-label="Previous review">←</button>
-        <div class="review-content"><img src="<?= $assets['reviewer'] ?>" alt="Fabius customer">
-          <blockquote>“I had a really nice ring that was too loose for my finger but Fabius resized it in an hour and now it’s a perfect size. Thanks, guys, you’re the best masters!”</blockquote>
+        <div class="review-content">
+          <blockquote>“The Resolute has a confident presence without feeling excessive. The skeleton dial makes every glance at the time feel considered.”</blockquote>
+          <p class="review-meta">Resolute Collection</p>
         </div><button class="review-arrow" data-review="next" aria-label="Next review">→</button>
       </div>
     </section>

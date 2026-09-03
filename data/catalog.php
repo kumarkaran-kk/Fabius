@@ -2,7 +2,6 @@
 function fabius_catalog(): array
 {
     $base = 'assets/new-images/optimized/';
-    $price = '₹1,15,479';
     $commonResoluteSpecs = [
         'Case' => ['Shape' => 'Round', 'Dimension' => 'Ø 42.00 mm', 'Water Resistance' => '5ATM', 'Lug distance' => '21mm', 'Lug-to-lug' => '48.00 mm', 'Thickness' => '11.20 mm'],
         'Dial & Hands' => ['Dial type' => 'Skeleton', 'Hands' => 'Polished steel', 'Hour markers' => 'Applied indices'],
@@ -18,7 +17,7 @@ function fabius_catalog(): array
 
     return [
         'resolute-black' => [
-            'name' => 'Resolute Black', 'collection' => 'Resolute', 'tone' => 'Black', 'audience' => 'men', 'price' => $price,
+            'name' => 'Resolute Black', 'collection' => 'Resolute', 'tone' => 'Black', 'audience' => 'men', 'price' => '₹1,15,479',
             'subtitle' => 'Automatic · 42mm · Leather', 'search' => 'resolute black automatic skeleton leather stainless steel men',
             'description' => 'Bold 42mm skeleton watch with exposed mechanics, sapphire crystal, and black leather strap — built for strength, precision, and the man who thrives under pressure.',
             'model_image' => $base . 'model-resolute-black.webp', 'collection_image' => $base . 'collection-resolute-black.webp', 'hero_image' => $base . 'hero-resolute-black.webp',
@@ -27,7 +26,7 @@ function fabius_catalog(): array
             'specs' => array_replace_recursive($commonResoluteSpecs, ['Dial & Hands' => ['Dial color' => 'Black'], 'Strap' => ['Color' => 'Black']]),
         ],
         'resolute-blue' => [
-            'name' => 'Resolute Blue', 'collection' => 'Resolute', 'tone' => 'Blue', 'audience' => 'men', 'price' => $price,
+            'name' => 'Resolute Blue', 'collection' => 'Resolute', 'tone' => 'Blue', 'audience' => 'men', 'price' => '₹1,15,479',
             'subtitle' => 'Automatic · 42mm · Leather', 'search' => 'resolute blue automatic skeleton leather stainless steel men nautical',
             'description' => 'A bold 42mm skeleton watch with nautical blue accents, exposed mechanics, and textured leather strap — made for strength, precision, and adventure.',
             'model_image' => $base . 'model-resolute-blue.webp', 'collection_image' => $base . 'collection-resolute-blue.webp', 'hero_image' => $base . 'hero-resolute-blue.webp',
@@ -36,7 +35,7 @@ function fabius_catalog(): array
             'specs' => array_replace_recursive($commonResoluteSpecs, ['Dial & Hands' => ['Dial color' => 'Blue'], 'Strap' => ['Color' => 'Blue']]),
         ],
         'resolute-brown' => [
-            'name' => 'Resolute Brown', 'collection' => 'Resolute', 'tone' => 'Brown', 'audience' => 'men', 'price' => $price,
+            'name' => 'Resolute Brown', 'collection' => 'Resolute', 'tone' => 'Brown', 'audience' => 'men', 'price' => '₹1,17,453',
             'subtitle' => 'Automatic · 42mm · Gold Plated', 'search' => 'resolute brown automatic skeleton leather gold plated men',
             'description' => 'A vintage-inspired 42mm skeleton watch with golden bezel, exposed movement, and rich brown leather strap — built for endurance and timeless style.',
             'model_image' => $base . 'model-resolute-brown.webp', 'collection_image' => $base . 'collection-resolute-brown.webp', 'hero_image' => $base . 'hero-resolute-brown.webp',
@@ -45,7 +44,7 @@ function fabius_catalog(): array
             'specs' => array_replace_recursive($commonResoluteSpecs, ['Dial & Hands' => ['Dial color' => 'Silver and gold'], 'Strap' => ['Color' => 'Brown']]),
         ],
         'lumina-gold' => [
-            'name' => 'Lumina Gold', 'collection' => 'Lumina', 'tone' => 'Gold', 'audience' => 'women', 'price' => $price,
+            'name' => 'Lumina Gold', 'collection' => 'Lumina', 'tone' => 'Gold', 'audience' => 'women', 'price' => '₹90,804',
             'subtitle' => 'Quartz Slim · 30mm', 'search' => 'lumina gold quartz slim 30mm women mother pearl bracelet',
             'description' => 'A luminous gold-plated 30mm timepiece with a mother-of-pearl dial, crystal hour markers, and refined integrated bracelet.',
             'model_image' => $base . 'model-lumina-gold.webp', 'collection_image' => $base . 'model-lumina-gold.webp', 'hero_image' => $base . 'model-lumina-gold.webp',
@@ -53,7 +52,7 @@ function fabius_catalog(): array
             'specs' => array_replace_recursive($commonLuminaSpecs, ['Dial & Hands' => ['Dial color' => 'Pink mother of pearl'], 'Bracelet' => ['Color' => 'Gold plated']]),
         ],
         'lumina-rose-gold' => [
-            'name' => 'Lumina Rose Gold', 'collection' => 'Lumina', 'tone' => 'Rose Gold', 'audience' => 'women', 'price' => $price,
+            'name' => 'Lumina Rose Gold', 'collection' => 'Lumina', 'tone' => 'Rose Gold', 'audience' => 'women', 'price' => '₹90,804',
             'subtitle' => 'Quartz Slim · 30mm', 'search' => 'lumina rose gold quartz slim 30mm women mother pearl bracelet',
             'description' => 'Warm rose-gold tones frame a radiant mother-of-pearl dial in an elegant 30mm silhouette designed for modern refinement.',
             'model_image' => $base . 'model-lumina-rose-gold.webp', 'collection_image' => $base . 'model-lumina-rose-gold.webp', 'hero_image' => $base . 'model-lumina-rose-gold.webp',
@@ -61,7 +60,7 @@ function fabius_catalog(): array
             'specs' => array_replace_recursive($commonLuminaSpecs, ['Dial & Hands' => ['Dial color' => 'Pink mother of pearl'], 'Bracelet' => ['Color' => 'Rose gold']]),
         ],
         'lumina-silver' => [
-            'name' => 'Lumina Silver', 'collection' => 'Lumina', 'tone' => 'Silver', 'audience' => 'women', 'price' => $price,
+            'name' => 'Lumina Silver', 'collection' => 'Lumina', 'tone' => 'Silver', 'audience' => 'women', 'price' => '₹89,817',
             'subtitle' => 'Quartz Slim · 30mm', 'search' => 'lumina silver quartz slim 30mm women mother pearl bracelet',
             'description' => 'Cool stainless steel surrounds an iridescent mother-of-pearl dial for a composed, contemporary expression of elegance.',
             'model_image' => $base . 'model-lumina-silver.webp', 'collection_image' => $base . 'model-lumina-silver.webp', 'hero_image' => $base . 'model-lumina-silver.webp',

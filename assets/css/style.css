@@ -767,7 +767,7 @@ button {
 }
 
 .review-content {
-    min-height: 450px;
+    min-height: 340px;
     background: #f7f7f7;
     display: flex;
     flex-direction: column;
@@ -777,19 +777,40 @@ button {
     padding: 70px
 }
 
-.review-content img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 55px
+.review-content:before {
+    content: "“";
+    margin-bottom: 22px;
+    color: #b68c35;
+    font: 400 64px/.55 var(--serif)
 }
 
 .review-content blockquote {
-    max-width: 920px;
-    font-size: 16px;
-    line-height: 1.5;
+    max-width: 840px;
+    font-size: 18px;
+    line-height: 1.65;
     margin: 0
+}
+
+.review-meta {
+    position: relative;
+    margin: 34px 0 0;
+    padding-top: 18px;
+    color: #8f6921;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase
+}
+
+.review-meta:before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 38px;
+    height: 1px;
+    background: #b68c35;
+    transform: translateX(-50%)
 }
 
 footer {
@@ -1206,14 +1227,8 @@ footer a:hover {
     }
 
     .review-content {
-        min-height: 390px;
+        min-height: 310px;
         padding: 30px 15px
-    }
-
-    .review-content img {
-        width: 110px;
-        height: 110px;
-        margin-bottom: 35px
     }
 
     .review-arrow {

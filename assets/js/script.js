@@ -144,14 +144,19 @@
   document.querySelector('[data-collection="next"]')?.addEventListener('click', () => showCollection(collectionIndex + 1));
   showCollection(0);
 
-  const reviewQuotes = [
-    '“I had a really nice ring that was too loose for my finger but Fabius resized it in an hour and now it’s a perfect size. Thanks, guys, you’re the best masters!”',
-    '“The finish is beautiful and the exposed movement gets compliments every time I wear it.”',
-    '“Elegant, comfortable and even better in person. The service felt every bit as premium as the watch.”'
+  const reviews = [
+    { quote: '“The Resolute has a confident presence without feeling excessive. The skeleton dial makes every glance at the time feel considered.”', meta: 'Resolute Collection' },
+    { quote: '“The Lumina feels beautifully balanced on the wrist. Its mother-of-pearl dial changes character as the light moves.”', meta: 'Lumina Collection' },
+    { quote: '“Fabius brings together expressive design, thoughtful proportions and the kind of detail that rewards a closer look.”', meta: 'The Fabius Experience' }
   ];
   let reviewIndex = 0;
   const quote = document.querySelector('.review-content blockquote');
-  const showReview = index => { reviewIndex = (index + reviewQuotes.length) % reviewQuotes.length; if (quote) quote.textContent = reviewQuotes[reviewIndex]; };
+  const reviewMeta = document.querySelector('.review-content .review-meta');
+  const showReview = index => {
+    reviewIndex = (index + reviews.length) % reviews.length;
+    if (quote) quote.textContent = reviews[reviewIndex].quote;
+    if (reviewMeta) reviewMeta.textContent = reviews[reviewIndex].meta;
+  };
   document.querySelector('[data-review="prev"]')?.addEventListener('click', () => showReview(reviewIndex - 1));
   document.querySelector('[data-review="next"]')?.addEventListener('click', () => showReview(reviewIndex + 1));
 
