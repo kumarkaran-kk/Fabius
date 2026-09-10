@@ -9,7 +9,7 @@ function fabius_editorial_pages(): array
             'eyebrow' => 'The House of FABIUS',
             'title' => 'Every Legacy<br>Begins With Time',
             'description' => 'Discover the purpose, perspective and quiet confidence behind FABIUS.',
-            'hero' => $assets . 'manifesto-watch-background.webp',
+            'hero' => $assets . 'products/manifesto-watch-background.webp',
             'intro_title' => 'Where Time<br><em>Becomes Legacy</em>',
             'intro' => [
                 'Before history was written, time was observed. Across centuries and civilizations, humanity has sought not only to measure time, but to give meaning to it.',
@@ -129,7 +129,7 @@ function fabius_editorial_pages(): array
         'privacy' => [
             'eyebrow' => 'Legal', 'title' => 'Privacy<br>Policy',
             'description' => 'How information is handled across the FABIUS showcase experience.',
-            'hero' => $assets . 'manifesto-watch-background.webp', 'compact' => true,
+            'hero' => $assets . 'products/manifesto-watch-background.webp', 'compact' => true,
             'intro_title' => 'Privacy With<br><em>Clarity</em>',
             'intro' => ['This website is designed for brand discovery and product showcasing. Purchases are completed on IndieKonnect, whose privacy practices apply to information submitted during checkout or account activity on that portal.'],
             'sections' => [
@@ -157,7 +157,7 @@ function fabius_editorial_pages(): array
         ],
         'shipping' => [
             'eyebrow' => 'Client Care', 'title' => 'Shipping<br>Policy', 'description' => 'Understanding how delivery works when purchasing a FABIUS timepiece.',
-            'hero' => $assets . 'collection-resolute-brown.webp', 'compact' => true,
+            'hero' => $assets . 'hero-resolute-brown.webp', 'compact' => true,
             'intro_title' => 'Purchasing Through<br><em>Our Retail Portal</em>',
             'intro' => ['The FABIUS website does not accept or fulfil orders. Selecting an acquisition link takes you to IndieKonnect, where availability, delivery options, charges and estimated timelines are presented.'],
             'sections' => [

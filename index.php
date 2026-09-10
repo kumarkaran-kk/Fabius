@@ -7,15 +7,13 @@ $assets = [
   'hero_black' => $imageBase . 'hero-resolute-black.webp',
   'hero_brown' => $imageBase . 'hero-resolute-brown.webp',
   'promo_men' => $imageBase . 'promo-mens-watch.webp',
-  'promo_women' => $imageBase . 'promo-womens-watch.webp',
-  'banner' => $imageBase . 'manifesto-watch-background.webp',
+  'promo_women' => $imageBase . 'products/promo-womens-watch.webp',
+  'banner' => $imageBase . 'products/manifesto-watch-background.webp',
   'visit_banner' => $imageBase . 'visit-watch-background.webp',
   'collection_black' => $imageBase . 'collection-resolute-black.webp',
   'collection_blue' => $imageBase . 'collection-resolute-blue.webp',
-  'collection_brown' => $imageBase . 'collection-resolute-brown.webp',
-  'model_black' => $imageBase . 'model-resolute-black.webp',
+  'collection_brown' => $imageBase . 'hero-resolute-brown.webp',
   'model_blue' => $imageBase . 'model-resolute-blue.webp',
-  'model_brown' => $imageBase . 'model-resolute-brown.webp',
   'model_gold' => $imageBase . 'model-lumina-gold.webp',
   'model_rose' => $imageBase . 'model-lumina-rose-gold.webp',
   'model_silver' => $imageBase . 'model-lumina-silver.webp',
@@ -71,7 +69,7 @@ $models = array_map(fn($slug, $product) => ['slug' => $slug] + $product, array_k
 
     <section class="category-grid section-pad reveal">
       <a class="category-card" href="mens-watches.php"><img src="<?= $assets['promo_men'] ?>" alt="Man wearing a blue Fabius watch"><span>More</span></a>
-      <a class="category-card" href="womens-watches.php"><img src="<?= $assets['promo_women'] ?>" alt="Woman wearing a gold Fabius watch"><span>More</span></a>
+      <a class="category-card" href="womens-watches.php"><img src="<?= $assets['promo_women'] ?>" alt="Woman wearing a rose-gold Fabius watch" width="1400" height="933" loading="lazy" decoding="async"><span>More</span></a>
     </section>
 
     <section class="manifesto dark-visual reveal" style="--background:url('/<?= ltrim($assets['banner'], '/') ?>')">

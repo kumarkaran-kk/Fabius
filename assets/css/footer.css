@@ -212,13 +212,13 @@
     inset: auto;
     display: flex;
     width: 100%;
-    height: clamp(78px, 8.5vw, 135px);
+    height: .7em;
     padding: 0 2%;
     align-items: flex-start;
     justify-content: center;
     overflow: hidden;
     color: rgba(174, 181, 189, .045);
-    font: 600 clamp(105px, 17vw, 270px)/.82 var(--serif);
+    font: 600 clamp(105px, 17vw, 270px)/1 var(--serif);
     letter-spacing: .035em;
     white-space: nowrap;
     pointer-events: none;
@@ -301,12 +301,14 @@
 
 .footer-socials {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: flex-end;
-    gap: 21px
+    gap: 10px
 }
 
 .footer-socials b {
+    white-space: nowrap;
     color: var(--footer-accent);
     font: 600 10px/1 Inter, Arial, sans-serif;
     letter-spacing: 2px;
@@ -322,17 +324,29 @@
 .site-footer .footer-socials a {
     display: grid;
     place-items: center;
-    width: 24px;
-    height: 24px;
+    flex: 0 0 32px;
+    width: 32px;
+    height: 32px;
     margin: 0;
     color: var(--footer-accent);
     font: 600 15px/1 Inter, Arial, sans-serif;
-    border: 1px solid rgba(174, 181, 189, .6);
-    border-radius: 50%;
+    border-radius: 4px;
     transition: background .2s, color .2s
 }
 
-.site-footer .footer-socials a:hover {
+.site-footer .footer-socials a svg {
+    display: block;
+    width: 20px;
+    height: 20px
+}
+
+.site-footer .footer-socials a:focus-visible {
+    outline: 2px solid var(--footer-bright);
+    outline-offset: 3px
+}
+
+.site-footer .footer-socials a:hover,
+.site-footer .footer-socials a:focus-visible {
     background: var(--footer-bright);
     color: #080909
 }
@@ -428,11 +442,11 @@
 
     .site-footer .footer-wordmark {
         display: flex !important;
-        height: 12vw;
+        height: .8em;
         min-height: 48px;
         padding: 0 2%;
         font-size: 22vw;
-        line-height: .82;
+        line-height: 1;
         letter-spacing: .02em
     }
 

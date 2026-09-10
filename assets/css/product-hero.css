@@ -1303,3 +1303,99 @@
 .pdp-scroll-mark:focus-visible b {
     transform: translateX(4px)
 }
+
+/* Proportionate PDP purchase controls. */
+.product-price-panel {
+    grid-template-columns: 1fr 94px;
+    max-width: 460px;
+    min-height: 122px;
+    margin-bottom: 22px;
+    padding: 21px 26px
+}
+
+.product-price-panel>div {
+    padding-right: 20px
+}
+
+.product-price-panel>div>span {
+    margin-bottom: 10px;
+    font-size: 9px;
+    letter-spacing: 2.8px
+}
+
+.product-price-panel .price {
+    font-size: clamp(30px, 2.35vw, 38px)
+}
+
+.price-emblem {
+    height: 60px
+}
+
+.price-emblem:before {
+    width: 32px;
+    height: 32px
+}
+
+.price-emblem:after {
+    width: 14px;
+    height: 14px
+}
+
+.acquisition-link {
+    max-width: 460px;
+    height: 54px;
+    padding: 0 22px;
+    gap: 16px;
+    font-size: 9px;
+    letter-spacing: 2.2px
+}
+
+.acquisition-link b {
+    font-size: 18px
+}
+
+.purchase-row {
+    margin-bottom: 20px
+}
+
+.purchase-note {
+    max-width: 460px
+}
+
+@media(max-width:560px) {
+    .product-price-panel {
+        grid-template-columns: 1fr 64px;
+        min-height: 104px;
+        margin-bottom: 18px;
+        padding: 17px 18px
+    }
+
+    .product-price-panel>div {
+        padding-right: 14px
+    }
+
+    .product-price-panel .price {
+        font-size: 28px
+    }
+
+    .price-emblem {
+        height: 48px
+    }
+
+    .price-emblem:before {
+        width: 27px;
+        height: 27px
+    }
+
+    .price-emblem:after {
+        width: 12px;
+        height: 12px
+    }
+
+    .acquisition-link {
+        height: 50px;
+        padding: 0 17px;
+        font-size: 8px;
+        letter-spacing: 1.7px
+    }
+}
