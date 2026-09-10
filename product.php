@@ -48,7 +48,7 @@ $relatedProducts = array_slice(array_values(array_filter(array_map(fn($itemSlug,
           <i class="price-emblem" aria-hidden="true"></i>
         </div>
         <div class="purchase-row">
-          <a class="acquisition-link" href="https://www.indiekonnect.com/" target="_blank" rel="noopener noreferrer"><span>Acquire via IndieKonnect</span><b aria-hidden="true">↗</b></a>
+          <a class="acquisition-link" href="<?= htmlspecialchars($product['retail_url']) ?>" target="_blank" rel="noopener noreferrer"><span>Acquire via IndieKonnect</span><b aria-hidden="true">↗</b></a>
         </div>
         <p class="purchase-note"><span aria-hidden="true">✓</span><span>Secure purchasing is completed through our official retail portal, IndieKonnect.</span></p>
       </div>

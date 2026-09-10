@@ -31,9 +31,9 @@
       <?php
       $cards = [
         ['Men’s Watches', 'Resolute architecture and exposed mechanics.', 'mens-watches.php', 'assets/new-images/optimized/promo-mens-watch.webp'],
-        ['Women’s Watches', 'Radiant materials in refined proportions.', 'womens-watches.php', 'assets/new-images/optimized/promo-womens-watch.webp'],
+        ['Women’s Watches', 'Radiant materials in refined proportions.', 'womens-watches.php', 'assets/new-images/optimized/products/promo-womens-watch.webp'],
         ['Automatic Watches', 'Mechanical energy revealed in motion.', 'automatic-watches.php', 'assets/new-images/optimized/hero-resolute-blue.webp'],
-        ['Quartz Watches', 'Quartz Slim precision with effortless elegance.', 'quartz-watches.php', 'assets/new-images/optimized/promo-womens-watch.webp'],
+        ['Quartz Watches', 'Quartz Slim precision with effortless elegance.', 'quartz-watches.php', 'assets/new-images/optimized/products/promo-womens-watch.webp'],
         ['Limited Editions', 'Future chapters of exceptional rarity.', 'limited-editions.php', 'assets/new-images/optimized/products/manifesto-watch-background.webp'],
       ];
       foreach ($cards as $cardIndex => $card): ?>
