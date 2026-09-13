@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
+  <?php require __DIR__ . '/includes/gtm-head.php'; ?>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description" content="Explore every Fabius watch collection.">

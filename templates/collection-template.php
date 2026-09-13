@@ -19,6 +19,7 @@ $products = match ($collectionKey) {
 <!doctype html>
 <html lang="en">
 <head>
+  <?php require dirname(__DIR__) . '/includes/gtm-head.php'; ?>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Fabius <?= htmlspecialchars($config['title']) ?> collection."><title>Fabius <?= htmlspecialchars($config['title']) ?></title>
   <link rel="icon" href="assets/brand/fabius-logo.png" type="image/png">

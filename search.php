@@ -9,6 +9,7 @@ $results = $query === '' ? $products : array_values(array_filter($products, func
 <!doctype html>
 <html lang="en">
 <head>
+  <?php require __DIR__ . '/includes/gtm-head.php'; ?>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Search the Fabius watch collection."><title>Search Fabius Watches</title>
   <link rel="icon" href="assets/brand/fabius-logo.png" type="image/png">

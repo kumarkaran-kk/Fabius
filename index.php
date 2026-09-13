@@ -30,6 +30,7 @@ $models = array_map(fn($slug, $product) => ['slug' => $slug] + $product, array_k
 <html lang="en">
 
 <head>
+  <?php require __DIR__ . '/includes/gtm-head.php'; ?>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Fabius precision watches — crafted for those who value every moment.">

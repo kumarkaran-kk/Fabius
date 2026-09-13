@@ -12,6 +12,7 @@ $plainTitle = trim(strip_tags(str_replace('<br>', ' ', $page['title'])));
 <html lang="en">
 
 <head>
+  <?php require dirname(__DIR__) . '/includes/gtm-head.php'; ?>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="<?= htmlspecialchars($page['description']) ?>">

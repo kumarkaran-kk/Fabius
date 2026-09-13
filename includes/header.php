@@ -1,4 +1,5 @@
 <?php
+require __DIR__ . '/gtm-body.php';
 $pageType = $pageType ?? 'home';
 $isInnerPage = $pageType !== 'home';
 if (!function_exists('fabius_drawer_navigation')) {
