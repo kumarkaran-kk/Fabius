@@ -48,6 +48,7 @@ $relatedProducts = array_slice(array_values(array_filter(array_map(fn($itemSlug,
           <div><span>Price</span><strong class="price"><?= htmlspecialchars($product['price']) ?></strong></div>
           <i class="price-emblem" aria-hidden="true"></i>
         </div>
+        <p class="product-price-terms">Inclusive of all applicable taxes. Shipping charges are calculated separately at checkout.</p>
         <div class="purchase-row">
           <a class="acquisition-link" href="<?= htmlspecialchars($product['retail_url']) ?>" target="_blank" rel="noopener noreferrer"><span>Acquire via IndieKonnect</span><b aria-hidden="true">↗</b></a>
         </div>
