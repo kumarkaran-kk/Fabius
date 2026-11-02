@@ -1,7 +1,9 @@
 <?php
 function fabius_catalog(): array
 {
-    $base = 'assets/new-images/optimized/';
+    $base = 'assets/images/shoot/';
+    $home = $base . 'home/';
+    $products = $base . 'products/';
     $commonResoluteSpecs = [
         'Case' => ['Shape' => 'Round', 'Dimension' => 'Ø 42.00 mm', 'Water Resistance' => '5ATM', 'Lug distance' => '21mm', 'Lug-to-lug' => '48.00 mm', 'Thickness' => '11.20 mm'],
         'Dial & Hands' => ['Dial type' => 'Skeleton', 'Hands' => 'Polished steel', 'Hour markers' => 'Applied indices'],
@@ -21,8 +23,8 @@ function fabius_catalog(): array
             'retail_url' => 'https://www.indiekonnect.com/shop/product/24',
             'subtitle' => 'Automatic · 42mm · Leather', 'search' => 'resolute black automatic skeleton leather stainless steel men',
             'description' => 'Bold 42mm skeleton watch with exposed mechanics, sapphire crystal, and black leather strap — built for strength, precision, and the man who thrives under pressure.',
-            'model_image' => $base . 'products/resolute-black.webp', 'collection_image' => $base . 'products/resolute-black.webp', 'hero_image' => $base . 'hero-resolute-black.webp',
-            'gallery' => [$base . 'products/resolute-black.webp', $base . 'products/resolute-black-a.webp', $base . 'products/resolute-black-b.webp'],
+            'model_image' => $home . 'model-black.webp', 'collection_image' => $home . 'collection-black.webp', 'hero_image' => $home . 'hero-03.webp',
+            'gallery' => [$products . 'resolute-black-01.webp', $products . 'resolute-black-02.webp', $products . 'resolute-black-03.webp', $products . 'resolute-black-04.webp', $products . 'resolute-black-05.webp', $products . 'resolute-black-06.webp'],
             'product_data' => ['Movement' => 'Automatic', 'Case Size' => '42mm', 'Strap Material' => 'Leather', 'Water Resistance' => '5ATM', 'Glass' => 'Flat Sapphire Crystal'],
             'specs' => array_replace_recursive($commonResoluteSpecs, ['Dial & Hands' => ['Dial color' => 'Black'], 'Strap' => ['Color' => 'Black']]),
         ],
@@ -31,8 +33,8 @@ function fabius_catalog(): array
             'retail_url' => 'https://www.indiekonnect.com/shop/product/26',
             'subtitle' => 'Automatic · 42mm · Leather', 'search' => 'resolute blue automatic skeleton leather stainless steel men nautical',
             'description' => 'A bold 42mm skeleton watch with nautical blue accents, exposed mechanics, and textured leather strap — made for strength, precision, and adventure.',
-            'model_image' => $base . 'products/resolute-blue.webp', 'collection_image' => $base . 'products/resolute-blue.webp', 'hero_image' => $base . 'hero-resolute-blue.webp',
-            'gallery' => [$base . 'products/resolute-blue.webp', $base . 'products/resolute-blue-a.webp', $base . 'products/resolute-blue-b.webp'],
+            'model_image' => $home . 'model-blue.webp', 'collection_image' => $home . 'collection-blue.webp', 'hero_image' => $home . 'hero-04.webp',
+            'gallery' => [$products . 'resolute-blue-01.webp', $products . 'resolute-blue-02.webp', $products . 'resolute-blue-03.webp', $products . 'resolute-blue-04.webp', $products . 'resolute-blue-05.webp', $products . 'resolute-blue-06.webp', $products . 'resolute-blue-07.webp', $products . 'resolute-blue-08.webp', $products . 'resolute-blue-09.webp', $products . 'resolute-blue-10.webp'],
             'product_data' => ['Movement' => 'Automatic', 'Case Size' => '42mm', 'Strap Material' => 'Leather', 'Water Resistance' => '5ATM', 'Glass' => 'Flat Sapphire Crystal'],
             'specs' => array_replace_recursive($commonResoluteSpecs, ['Dial & Hands' => ['Dial color' => 'Blue'], 'Strap' => ['Color' => 'Blue']]),
         ],
@@ -41,8 +43,8 @@ function fabius_catalog(): array
             'retail_url' => 'https://www.indiekonnect.com/shop/product/25',
             'subtitle' => 'Automatic · 42mm · Gold Plated', 'search' => 'resolute brown automatic skeleton leather gold plated men',
             'description' => 'A vintage-inspired 42mm skeleton watch with golden bezel, exposed movement, and rich brown leather strap — built for endurance and timeless style.',
-            'model_image' => $base . 'products/resolute-brown.webp', 'collection_image' => $base . 'products/resolute-brown.webp', 'hero_image' => $base . 'hero-resolute-brown.webp',
-            'gallery' => [$base . 'products/resolute-brown.webp', $base . 'products/resolute-brown-a.webp', $base . 'products/resolute-brown-b.webp'],
+            'model_image' => $home . 'model-brown.webp', 'collection_image' => $home . 'collection-brown.webp', 'hero_image' => $home . 'hero-01.webp',
+            'gallery' => [$products . 'resolute-brown-01.webp', $products . 'resolute-brown-02.webp', $products . 'resolute-brown-03.webp', $products . 'resolute-brown-04.webp', $products . 'resolute-brown-05.webp', $products . 'resolute-brown-06.webp', $products . 'resolute-brown-07.webp', $products . 'resolute-brown-08.webp', $products . 'resolute-brown-09.webp'],
             'product_data' => ['Movement' => 'Automatic', 'Case Size' => '42mm', 'Strap Material' => 'Leather', 'Water Resistance' => '5ATM', 'Glass' => 'Flat Sapphire Crystal'],
             'specs' => array_replace_recursive($commonResoluteSpecs, ['Dial & Hands' => ['Dial color' => 'Silver and gold'], 'Strap' => ['Color' => 'Brown']]),
         ],
@@ -51,8 +53,8 @@ function fabius_catalog(): array
             'retail_url' => 'https://www.indiekonnect.com/shop/product/23',
             'subtitle' => 'Quartz Slim · 30mm', 'search' => 'lumina gold quartz slim 30mm women mother pearl bracelet',
             'description' => 'A luminous gold-plated 30mm timepiece with a mother-of-pearl dial, crystal hour markers, and refined integrated bracelet.',
-            'model_image' => $base . 'model-lumina-gold.webp', 'collection_image' => $base . 'model-lumina-gold.webp', 'hero_image' => $base . 'model-lumina-gold.webp',
-            'gallery' => [$base . 'model-lumina-gold.webp'], 'product_data' => ['Movement' => 'Quartz Slim', 'Case Size' => '30mm', 'Bracelet' => 'Stainless Steel', 'Water Resistance' => '5ATM', 'Glass' => 'Flat Sapphire Crystal'],
+            'model_image' => $home . 'model-gold.webp', 'collection_image' => $home . 'model-gold.webp', 'hero_image' => $products . 'lumina-gold-06.webp',
+            'gallery' => [$products . 'lumina-gold-01.webp', $products . 'lumina-gold-02.webp', $products . 'lumina-gold-03.webp', $products . 'lumina-gold-04.webp', $products . 'lumina-gold-05.webp', $products . 'lumina-gold-06.webp'], 'product_data' => ['Movement' => 'Quartz Slim', 'Case Size' => '30mm', 'Bracelet' => 'Stainless Steel', 'Water Resistance' => '5ATM', 'Glass' => 'Flat Sapphire Crystal'],
             'specs' => array_replace_recursive($commonLuminaSpecs, ['Dial & Hands' => ['Dial color' => 'Pink mother of pearl'], 'Bracelet' => ['Color' => 'Gold plated']]),
         ],
         'lumina-rose-gold' => [
@@ -60,8 +62,8 @@ function fabius_catalog(): array
             'retail_url' => 'https://www.indiekonnect.com/shop/product/21',
             'subtitle' => 'Quartz Slim · 30mm', 'search' => 'lumina rose gold quartz slim 30mm women mother pearl bracelet',
             'description' => 'Warm rose-gold tones frame a radiant mother-of-pearl dial in an elegant 30mm silhouette designed for modern refinement.',
-            'model_image' => $base . 'model-lumina-rose-gold.webp', 'collection_image' => $base . 'model-lumina-rose-gold.webp', 'hero_image' => $base . 'model-lumina-rose-gold.webp',
-            'gallery' => [$base . 'model-lumina-rose-gold.webp'], 'product_data' => ['Movement' => 'Quartz Slim', 'Case Size' => '30mm', 'Bracelet' => 'Stainless Steel', 'Water Resistance' => '5ATM', 'Glass' => 'Flat Sapphire Crystal'],
+            'model_image' => $home . 'model-rose-gold.webp', 'collection_image' => $home . 'category-women.webp', 'hero_image' => $products . 'lumina-rose-gold-05.webp',
+            'gallery' => [$products . 'lumina-rose-gold-01.webp', $products . 'lumina-rose-gold-02.webp', $products . 'lumina-rose-gold-03.webp', $products . 'lumina-rose-gold-04.webp', $products . 'lumina-rose-gold-05.webp', $products . 'lumina-rose-gold-06.webp'], 'product_data' => ['Movement' => 'Quartz Slim', 'Case Size' => '30mm', 'Bracelet' => 'Stainless Steel', 'Water Resistance' => '5ATM', 'Glass' => 'Flat Sapphire Crystal'],
             'specs' => array_replace_recursive($commonLuminaSpecs, ['Dial & Hands' => ['Dial color' => 'Pink mother of pearl'], 'Bracelet' => ['Color' => 'Rose gold']]),
         ],
         'lumina-silver' => [
@@ -69,8 +71,8 @@ function fabius_catalog(): array
             'retail_url' => 'https://www.indiekonnect.com/shop/product/22',
             'subtitle' => 'Quartz Slim · 30mm', 'search' => 'lumina steel stainless silver quartz slim 30mm women mother pearl bracelet',
             'description' => 'Cool stainless steel surrounds an iridescent mother-of-pearl dial for a composed, contemporary expression of elegance.',
-            'model_image' => $base . 'model-lumina-silver.webp', 'collection_image' => $base . 'model-lumina-silver.webp', 'hero_image' => $base . 'model-lumina-silver.webp',
-            'gallery' => [$base . 'model-lumina-silver.webp'], 'product_data' => ['Movement' => 'Quartz Slim', 'Case Size' => '30mm', 'Bracelet' => 'Stainless Steel', 'Water Resistance' => '5ATM', 'Glass' => 'Flat Sapphire Crystal'],
+            'model_image' => $home . 'model-steel.webp', 'collection_image' => $home . 'model-steel.webp', 'hero_image' => $products . 'lumina-steel-03.webp',
+            'gallery' => [$products . 'lumina-steel-01.webp', $products . 'lumina-steel-02.webp', $products . 'lumina-steel-03.webp', $products . 'lumina-steel-04.webp', $products . 'lumina-steel-05.webp', $products . 'lumina-steel-06.webp', $products . 'lumina-steel-07.webp'], 'product_data' => ['Movement' => 'Quartz Slim', 'Case Size' => '30mm', 'Bracelet' => 'Stainless Steel', 'Water Resistance' => '5ATM', 'Glass' => 'Flat Sapphire Crystal'],
             'specs' => array_replace_recursive($commonLuminaSpecs, ['Dial & Hands' => ['Dial color' => 'Dark mother of pearl'], 'Bracelet' => ['Color' => 'Silver']]),
         ],
     ];

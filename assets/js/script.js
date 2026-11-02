@@ -217,7 +217,7 @@
   if (feature && !feature.querySelector('.feature-watch')) {
     const featureWatch = document.createElement('img');
     featureWatch.className = 'feature-watch';
-    featureWatch.src = 'assets/new-images/optimized/feature-lumina-gold-watch.webp';
+      featureWatch.src = 'assets/images/shoot/home/feature-watch-cutout.webp';
     featureWatch.alt = 'Fabius Lumina gold watch';
     feature.insertBefore(featureWatch, feature.querySelector('.feature-copy'));
   }

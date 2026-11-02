@@ -16,6 +16,7 @@ phase-*.jpg
 phase-*.png
 video-contact*.jpg
 video-contact*.png
+_image-audit/
 
 # Environment and local configuration
 .env

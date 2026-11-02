@@ -262,6 +262,10 @@
     transform: scale(1.6)
 }
 
+.category-card--men:hover img {
+    transform: scale(1.08)
+}
+
 .category-card strong {
     position: absolute;
     z-index: 2;
@@ -1033,7 +1037,7 @@
 }
 
 .visit {
-    --background: url('../new-images/optimized/visit-watch-background.webp') !important;
+    --background: url('../images/shoot/home/visit.webp') !important;
     background-image: linear-gradient(rgba(0,0,0,.88), rgba(0,0,0,.82)), var(--background), var(--background)
 }
 

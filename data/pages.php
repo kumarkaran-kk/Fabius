@@ -2,14 +2,14 @@
 
 function fabius_editorial_pages(): array
 {
-    $assets = 'assets/new-images/optimized/';
+    $assets = 'assets/images/shoot/';
 
     return [
         'house' => [
             'eyebrow' => 'The House of FABIUS',
             'title' => 'Every Legacy<br>Begins With Time',
             'description' => 'Discover the purpose, perspective and quiet confidence behind FABIUS.',
-            'hero' => $assets . 'products/manifesto-watch-background.webp',
+            'hero' => $assets . 'editorial/house.webp',
             'intro_title' => 'Where Time<br><em>Becomes Legacy</em>',
             'intro' => [
                 'Before history was written, time was observed. Across centuries and civilizations, humanity has sought not only to measure time, but to give meaning to it.',
@@ -26,7 +26,7 @@ function fabius_editorial_pages(): array
         'philosophy' => [
             'eyebrow' => 'The House of FABIUS', 'title' => 'Our<br>Philosophy',
             'description' => 'True luxury is measured by the meaning a timepiece carries.',
-            'hero' => $assets . 'hero-resolute-brown.webp',
+            'hero' => $assets . 'home/hero-01.webp',
             'intro_title' => 'Time Is Life’s Most<br><em>Valuable Possession</em>',
             'intro' => ['Every second is an opportunity, every milestone tells a story, and every achievement deserves to be remembered.', 'FABIUS exists to transform moments into memories through timepieces designed to accompany journeys and become treasured across generations.'],
             'quote' => 'Luxury is not only the object. It is the emotion it carries, the precision behind its creation and the legacy it leaves.',
@@ -41,7 +41,7 @@ function fabius_editorial_pages(): array
         'craftsmanship' => [
             'eyebrow' => 'Made With Intention', 'title' => 'The Discipline of<br>Craftsmanship',
             'description' => 'Precision engineering, refined finishing and materials selected for enduring clarity.',
-            'hero' => $assets . 'hero-resolute-black.webp',
+            'hero' => $assets . 'editorial/partner.webp',
             'intro_title' => 'Every Detail Has<br><em>A Purpose</em>',
             'intro' => ['Craftsmanship begins with proportion: the relationship between case, dial, movement and the wrist. It continues through the clarity of the crystal, the character of each finish and the way every component works as one.', 'FABIUS pairs expressive design with practical durability, from sapphire crystal and stainless steel architecture to carefully selected automatic and quartz movements.'],
             'sections' => [
@@ -55,7 +55,7 @@ function fabius_editorial_pages(): array
         'timekeeping' => [
             'eyebrow' => 'The Art of Timekeeping', 'title' => 'Mechanics,<br>Made Meaningful',
             'description' => 'Two expressions of precision, united by considered design.',
-            'hero' => $assets . 'hero-resolute-blue.webp',
+            'hero' => $assets . 'editorial/contact.webp',
             'intro_title' => 'A Movement for<br><em>Every Rhythm</em>',
             'intro' => ['Mechanical and quartz movements express time differently. One reveals energy through an intricate living mechanism; the other delivers composed accuracy through modern engineering.', 'Neither is defined by spectacle alone. The right movement is the one that suits how its wearer lives, values and experiences time.'],
             'sections' => [
@@ -68,7 +68,7 @@ function fabius_editorial_pages(): array
         'care' => [
             'eyebrow' => 'Care & Service', 'title' => 'Watch Care<br>Guide',
             'description' => 'Simple rituals that help preserve the appearance and performance of your timepiece.',
-            'hero' => $assets . 'collection-resolute-black.webp',
+            'hero' => $assets . 'editorial/care.webp',
             'intro_title' => 'Preserve What<br><em>Accompanies You</em>',
             'intro' => ['A fine watch is designed to be worn. Thoughtful everyday care protects its finish, movement, strap and water resistance so it can continue marking meaningful moments.'],
             'sections' => [
@@ -85,7 +85,7 @@ function fabius_editorial_pages(): array
         'warranty' => [
             'eyebrow' => 'Care & Service', 'title' => 'Warranty<br>& Service',
             'description' => 'Clear guidance for ownership, assessment and after-sales support.',
-            'hero' => $assets . 'model-resolute-blue.webp',
+            'hero' => $assets . 'editorial/warranty.webp',
             'intro_title' => 'Support Beyond<br><em>The First Moment</em>',
             'intro' => ['A lasting timepiece deserves attentive support. Keep your proof of purchase, authentication information and warranty card together, as these may be required when requesting an assessment.'],
             'sections' => [
@@ -100,7 +100,7 @@ function fabius_editorial_pages(): array
         'partner' => [
             'eyebrow' => 'Grow With FABIUS', 'title' => 'Become<br>A Partner',
             'description' => 'For retailers and collaborators who share our commitment to considered luxury.',
-            'hero' => $assets . 'promo-mens-watch.webp',
+            'hero' => $assets . 'editorial/partner.webp',
             'intro_title' => 'A Shared Standard<br><em>Of Excellence</em>',
             'intro' => ['FABIUS seeks thoughtful partnerships built on presentation, trust and long-term value. We welcome conversations with established retailers, hospitality partners, corporate gifting teams and aligned luxury businesses.'],
             'sections' => [
@@ -114,7 +114,7 @@ function fabius_editorial_pages(): array
         'contact' => [
             'eyebrow' => 'Contact FABIUS', 'title' => 'Begin A<br>Conversation',
             'description' => 'Product guidance, brand enquiries and partnership conversations.',
-            'hero' => $assets . 'feature-story-portrait.webp',
+            'hero' => $assets . 'editorial/contact.webp',
             'intro_title' => 'The Right Route,<br><em>Without Delay</em>',
             'intro' => ['Choose the enquiry route that best matches your request. Purchase, payment, delivery and retailer-return questions should be directed to IndieKonnect, where the transaction is completed.'],
             'sections' => [
@@ -123,13 +123,12 @@ function fabius_editorial_pages(): array
                 ['number' => '03', 'title' => 'Warranty & Service', 'body' => ['Review the warranty guidance and prepare your model details, purchase record and photographs before requesting an assessment.']],
                 ['number' => '04', 'title' => 'Partnerships', 'body' => ['Retail, corporate gifting and collaboration enquiries can begin through the Become a Partner page.']],
             ],
-            'note' => 'FABIUS contact email, telephone number, business address and service locations must be inserted after client confirmation.',
             'links' => [['label' => 'Retail Support ↗', 'href' => 'https://www.indiekonnect.com/', 'external' => true], ['label' => 'Warranty & Service', 'href' => 'warranty-service.php'], ['label' => 'Become a Partner', 'href' => 'become-a-partner.php']],
         ],
         'privacy' => [
             'eyebrow' => 'Legal', 'title' => 'Privacy<br>Policy',
             'description' => 'How information is handled across the FABIUS showcase experience.',
-            'hero' => $assets . 'products/manifesto-watch-background.webp', 'compact' => true,
+            'hero' => $assets . 'editorial/house.webp', 'compact' => true,
             'intro_title' => 'Privacy With<br><em>Clarity</em>',
             'intro' => ['This website is designed for brand discovery and product showcasing. Purchases are completed on IndieKonnect, whose privacy practices apply to information submitted during checkout or account activity on that portal.'],
             'sections' => [
@@ -143,7 +142,7 @@ function fabius_editorial_pages(): array
         ],
         'terms' => [
             'eyebrow' => 'Legal', 'title' => 'Terms &<br>Conditions', 'description' => 'Terms governing use of the FABIUS showcase website.',
-            'hero' => $assets . 'hero-resolute-black.webp', 'compact' => true,
+            'hero' => $assets . 'home/hero-03.webp', 'compact' => true,
             'intro_title' => 'A Clear<br><em>Digital Experience</em>',
             'intro' => ['By using this website, visitors agree to use its content and features lawfully. The website presents FABIUS products and brand information; it does not itself complete retail transactions.'],
             'sections' => [
@@ -157,7 +156,7 @@ function fabius_editorial_pages(): array
         ],
         'shipping' => [
             'eyebrow' => 'Client Care', 'title' => 'Shipping<br>Policy', 'description' => 'Understanding how delivery works when purchasing a FABIUS timepiece.',
-            'hero' => $assets . 'hero-resolute-brown.webp', 'compact' => true,
+            'hero' => $assets . 'home/hero-02.webp', 'compact' => true,
             'intro_title' => 'Purchasing Through<br><em>Our Retail Portal</em>',
             'intro' => ['The FABIUS website does not accept or fulfil orders. Selecting an acquisition link takes you to IndieKonnect, where availability, delivery options, charges and estimated timelines are presented.'],
             'sections' => [
@@ -171,7 +170,7 @@ function fabius_editorial_pages(): array
         ],
         'returns' => [
             'eyebrow' => 'Client Care', 'title' => 'Returns &<br>Exchanges', 'description' => 'The correct route for purchase-related return and exchange requests.',
-            'hero' => $assets . 'collection-resolute-blue.webp', 'compact' => true,
+            'hero' => $assets . 'home/hero-05.webp', 'compact' => true,
             'intro_title' => 'Start With The<br><em>Retailer of Record</em>',
             'intro' => ['Because purchases are completed through IndieKonnect, return eligibility, exchange availability, deadlines and refund processing are governed by the terms shown by that portal at the time of purchase.'],
             'sections' => [
@@ -185,7 +184,7 @@ function fabius_editorial_pages(): array
         ],
         'faqs' => [
             'eyebrow' => 'Care & Service', 'title' => 'Frequently Asked<br>Questions', 'description' => 'Essential guidance for discovering, purchasing and caring for FABIUS.',
-            'hero' => $assets . 'visit-watch-background.webp', 'compact' => true,
+            'hero' => $assets . 'home/visit.webp', 'compact' => true,
             'intro_title' => 'Answers With<br><em>Clarity</em>',
             'intro' => ['Find concise answers to common questions about collections, movements, purchasing and ownership.'],
             'faqs' => [

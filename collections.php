@@ -21,7 +21,7 @@
 <?php $pageType = 'collection'; require __DIR__ . '/includes/header.php'; ?>
 <main class="collections-hub">
   <section class="editorial-hero">
-    <img src="assets/new-images/optimized/products/manifesto-watch-background.webp" alt="Fabius watch collections">
+    <img src="assets/images/shoot/editorial/partner.webp" alt="Fabius watch collections">
     <div class="editorial-hero-shade"></div>
     <div class="editorial-hero-copy"><span>Fabius Collections</span><h1>Expressions<br>Of Time</h1><p>Discover mechanical presence, luminous precision and timepieces designed to accompany defining moments.</p></div>
     <div class="editorial-scroll" aria-hidden="true"><i></i><span>Discover</span></div>
@@ -31,11 +31,11 @@
     <div class="collection-directory-grid">
       <?php
       $cards = [
-        ['Men’s Watches', 'Resolute architecture and exposed mechanics.', 'mens-watches.php', 'assets/new-images/optimized/promo-mens-watch.webp'],
-        ['Women’s Watches', 'Radiant materials in refined proportions.', 'womens-watches.php', 'assets/new-images/optimized/products/promo-womens-watch.webp'],
-        ['Automatic Watches', 'Mechanical energy revealed in motion.', 'automatic-watches.php', 'assets/new-images/optimized/hero-resolute-blue.webp'],
-        ['Quartz Watches', 'Quartz Slim precision with effortless elegance.', 'quartz-watches.php', 'assets/new-images/optimized/products/promo-womens-watch.webp'],
-        ['Limited Editions', 'Future chapters of exceptional rarity.', 'limited-editions.php', 'assets/new-images/optimized/products/manifesto-watch-background.webp'],
+        ['Men’s Watches', 'Resolute architecture and exposed mechanics.', 'mens-watches.php', 'assets/images/shoot/home/category-men.webp'],
+        ['Women’s Watches', 'Radiant materials in refined proportions.', 'womens-watches.php', 'assets/images/shoot/home/category-women.webp'],
+        ['Automatic Watches', 'Mechanical energy revealed in motion.', 'automatic-watches.php', 'assets/images/shoot/home/collection-blue.webp'],
+        ['Quartz Watches', 'Quartz Slim precision with effortless elegance.', 'quartz-watches.php', 'assets/images/shoot/home/feature-campaign.webp'],
+        ['Limited Editions', 'Future chapters of exceptional rarity.', 'limited-editions.php', 'assets/images/shoot/editorial/partner.webp'],
       ];
       foreach ($cards as $cardIndex => $card): ?>
         <a class="directory-card pdp-reveal" href="<?= $card[2] ?>"><img src="<?= $card[3] ?>" alt="<?= htmlspecialchars($card[0]) ?> collection"><i class="directory-index">0<?= $cardIndex + 1 ?></i><div><span>Fabius Collection</span><h2><?= htmlspecialchars($card[0]) ?></h2><p><?= htmlspecialchars($card[1]) ?></p><b><span>Explore Collection</span><i aria-hidden="true">→</i></b></div></a>

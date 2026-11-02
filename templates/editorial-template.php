@@ -31,7 +31,7 @@ $plainTitle = trim(strip_tags(str_replace('<br>', ' ', $page['title'])));
 <body>
   <?php $pageType = 'editorial';
   require dirname(__DIR__) . '/includes/header.php'; ?>
-  <main class="editorial-page<?= !empty($page['compact']) ? ' editorial-page--compact' : '' ?>">
+  <main class="editorial-page editorial-page--<?= htmlspecialchars($pageKey) ?><?= !empty($page['compact']) ? ' editorial-page--compact' : '' ?>">
     <section class="editorial-hero">
       <img src="<?= htmlspecialchars($page['hero']) ?>" alt="">
       <div class="editorial-hero-shade"></div>

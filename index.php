@@ -1,27 +1,32 @@
 <?php
 require_once __DIR__ . '/data/catalog.php';
 $catalog = fabius_catalog();
-$imageBase = 'assets/new-images/optimized/';
+$imageBase = 'assets/images/shoot/';
 $assets = [
-  'hero_blue' => $imageBase . 'hero-resolute-blue.webp',
-  'hero_black' => $imageBase . 'hero-resolute-black.webp',
-  'hero_brown' => $imageBase . 'hero-resolute-brown.webp',
-  'promo_men' => $imageBase . 'promo-mens-watch.webp',
-  'promo_women' => $imageBase . 'products/promo-womens-watch.webp',
-  'banner' => $imageBase . 'products/manifesto-watch-background.webp',
-  'visit_banner' => $imageBase . 'visit-watch-background.webp',
-  'collection_black' => $imageBase . 'collection-resolute-black.webp',
-  'collection_blue' => $imageBase . 'collection-resolute-blue.webp',
-  'collection_brown' => $imageBase . 'hero-resolute-brown.webp',
-  'model_blue' => $imageBase . 'model-resolute-blue.webp',
-  'model_gold' => $imageBase . 'model-lumina-gold.webp',
-  'model_rose' => $imageBase . 'model-lumina-rose-gold.webp',
-  'model_silver' => $imageBase . 'model-lumina-silver.webp',
-  'feature' => $imageBase . 'feature-story-portrait.webp',
-  'feature_watch' => $imageBase . 'feature-lumina-gold-watch.webp',
+  'hero_01' => $imageBase . 'home/hero-01.webp',
+  'hero_02' => $imageBase . 'home/hero-02.webp',
+  'hero_03' => $imageBase . 'home/hero-03.webp',
+  'hero_04' => $imageBase . 'home/hero-04.webp',
+  'hero_05' => $imageBase . 'home/hero-05.webp',
+  'promo_men' => $imageBase . 'home/category-men.webp',
+  'promo_women' => $imageBase . 'home/category-women.webp',
+  'banner' => $imageBase . 'home/manifesto.webp',
+  'visit_banner' => $imageBase . 'home/visit.webp',
+  'feature' => $imageBase . 'home/feature-campaign.webp',
+  'feature_watch' => $imageBase . 'home/feature-watch-cutout.webp',
 ];
 
-$heroSlides = array_map(fn($slug) => ['slug' => $slug, 'image_url' => $catalog[$slug]['hero_image'], 'tone' => $catalog[$slug]['tone'], 'model' => $catalog[$slug]['collection'], 'copy' => $catalog[$slug]['description']], ['resolute-blue', 'resolute-black', 'resolute-brown']);
+$heroMap = [
+  ['slug' => 'resolute-brown', 'image_url' => $assets['hero_01']],
+  ['slug' => 'resolute-brown', 'image_url' => $assets['hero_02']],
+  ['slug' => 'resolute-black', 'image_url' => $assets['hero_03']],
+  ['slug' => 'resolute-blue', 'image_url' => $assets['hero_04']],
+  ['slug' => 'resolute-black', 'image_url' => $assets['hero_05']],
+];
+$heroSlides = array_map(function ($slide) use ($catalog) {
+  $product = $catalog[$slide['slug']];
+  return $slide + ['tone' => $product['tone'], 'model' => $product['collection'], 'copy' => $product['description']];
+}, $heroMap);
 
 $collections = array_map(fn($slug) => ['slug' => $slug, 'image_url' => $catalog[$slug]['collection_image'], 'tone' => $catalog[$slug]['tone'], 'copy' => $catalog[$slug]['description']], ['resolute-black', 'resolute-blue', 'resolute-brown']);
 $models = array_map(fn($slug, $product) => ['slug' => $slug] + $product, array_keys($catalog), array_values($catalog));
@@ -59,7 +64,7 @@ $models = array_map(fn($slug, $product) => ['slug' => $slug] + $product, array_k
             <h1><?= htmlspecialchars($slide['tone']) ?></h1>
             <h2><?= htmlspecialchars($slide['model']) ?></h2>
             <p><?= htmlspecialchars($slide['copy']) ?></p>
-            <a class="button button-light" href="product.php">Discover</a>
+            <a class="button button-light" href="product.php?slug=<?= urlencode($slide['slug']) ?>">Discover</a>
           </div>
         </article>
       <?php endforeach; ?>
@@ -69,7 +74,7 @@ $models = array_map(fn($slug, $product) => ['slug' => $slug] + $product, array_k
     </section>
 
     <section class="category-grid section-pad reveal">
-      <a class="category-card" href="mens-watches.php"><img src="<?= $assets['promo_men'] ?>" alt="Man wearing a blue Fabius watch"><span>More</span></a>
+      <a class="category-card category-card--men" href="mens-watches.php"><img src="<?= $assets['promo_men'] ?>" alt="Man wearing a blue Fabius watch"><span>More</span></a>
       <a class="category-card" href="womens-watches.php"><img src="<?= $assets['promo_women'] ?>" alt="Woman wearing a rose-gold Fabius watch" width="1400" height="933" loading="lazy" decoding="async"><span>More</span></a>
     </section>
 
@@ -115,6 +120,7 @@ $models = array_map(fn($slug, $product) => ['slug' => $slug] + $product, array_k
 
     <section class="feature" id="story">
       <div class="feature-image reveal"><img src="<?= $assets['feature'] ?>" alt="Fabius Lumina gold watch campaign"></div>
+      <img class="feature-watch" src="<?= $assets['feature_watch'] ?>" alt="Fabius Lumina gold watch">
       <div class="feature-copy reveal">
         <h2>Small pleasures<br>from Fabius</h2>
         <p>We create considered timepieces where precision, purpose and enduring design become part of life’s defining moments.</p><a class="button" href="house-of-fabius.php">Our Story</a>
