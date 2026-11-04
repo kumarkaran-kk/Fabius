@@ -1,0 +1,48 @@
+.collection-hero {
+    height: clamp(620px, calc(100svh - 82px), 820px);
+    min-height: 620px;
+}
+
+.collection-hero h1 {
+    font-size: clamp(54px, 6vw, 96px);
+    line-height: .98;
+}
+
+@media (min-width: 901px) {
+    .collection-page--women .collection-hero > img,
+    .collection-page--quartz .collection-hero > img {
+        position: absolute;
+        inset: 0 0 0 auto;
+        width: 50%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .collection-page--women .collection-hero > div,
+    .collection-page--quartz .collection-hero > div {
+        background: linear-gradient(90deg, #050505 0, #050505 42%, rgba(5, 5, 5, .96) 52%, rgba(5, 5, 5, .36) 76%, rgba(5, 5, 5, .08) 100%);
+    }
+
+    .collection-page--women .collection-hero header,
+    .collection-page--quartz .collection-hero header {
+        width: min(650px, 42vw);
+    }
+}
+
+@media (max-width: 900px) {
+    .collection-hero {
+        height: 720px;
+    }
+}
+
+@media (max-width: 560px) {
+    .collection-hero {
+        height: 660px;
+        min-height: 0;
+    }
+
+    .collection-hero h1 {
+        font-size: clamp(44px, 15vw, 56px);
+    }
+}

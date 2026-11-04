@@ -36,6 +36,9 @@ vendor/
 .cache/
 dist/
 
+# High-resolution source photography (deployment uses optimized WebP assets)
+website Images - fabius/
+
 # Temporary and backup files
 *.tmp
 *.temp

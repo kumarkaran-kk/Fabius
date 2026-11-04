@@ -3,11 +3,12 @@ require_once __DIR__ . '/data/catalog.php';
 $catalog = fabius_catalog();
 $imageBase = 'assets/images/shoot/';
 $assets = [
-  'hero_01' => $imageBase . 'home/hero-01.webp',
+  'hero_01' => $imageBase . 'home/hero-resolute-blue-wide.jpg',
   'hero_02' => $imageBase . 'home/hero-02.webp',
   'hero_03' => $imageBase . 'home/hero-03.webp',
-  'hero_04' => $imageBase . 'home/hero-04.webp',
-  'hero_05' => $imageBase . 'home/hero-05.webp',
+  'hero_mobile_01' => $imageBase . 'home/hero-resolute-blue-mobile.jpg',
+  'hero_mobile_02' => $imageBase . 'home/hero-resolute-brown-mobile.jpg',
+  'hero_mobile_03' => $imageBase . 'home/hero-resolute-black-mobile.jpg',
   'promo_men' => $imageBase . 'home/category-men.webp',
   'promo_women' => $imageBase . 'home/category-women.webp',
   'banner' => $imageBase . 'home/manifesto.webp',
@@ -17,11 +18,9 @@ $assets = [
 ];
 
 $heroMap = [
-  ['slug' => 'resolute-brown', 'image_url' => $assets['hero_01']],
-  ['slug' => 'resolute-brown', 'image_url' => $assets['hero_02']],
-  ['slug' => 'resolute-black', 'image_url' => $assets['hero_03']],
-  ['slug' => 'resolute-blue', 'image_url' => $assets['hero_04']],
-  ['slug' => 'resolute-black', 'image_url' => $assets['hero_05']],
+  ['slug' => 'resolute-blue', 'image_url' => $assets['hero_01'], 'mobile_image_url' => $assets['hero_mobile_01']],
+  ['slug' => 'resolute-brown', 'image_url' => $assets['hero_02'], 'mobile_image_url' => $assets['hero_mobile_02']],
+  ['slug' => 'resolute-black', 'image_url' => $assets['hero_03'], 'mobile_image_url' => $assets['hero_mobile_03']],
 ];
 $heroSlides = array_map(function ($slide) use ($catalog) {
   $product = $catalog[$slide['slug']];
@@ -29,7 +28,12 @@ $heroSlides = array_map(function ($slide) use ($catalog) {
 }, $heroMap);
 
 $collections = array_map(fn($slug) => ['slug' => $slug, 'image_url' => $catalog[$slug]['collection_image'], 'tone' => $catalog[$slug]['tone'], 'copy' => $catalog[$slug]['description']], ['resolute-black', 'resolute-blue', 'resolute-brown']);
-$models = array_map(fn($slug, $product) => ['slug' => $slug] + $product, array_keys($catalog), array_values($catalog));
+$models = array_map(function ($slug, $product) {
+  $modelImage = $product['audience'] === 'men'
+    ? $product['gallery'][array_key_last($product['gallery'])]
+    : $product['model_image'];
+  return ['slug' => $slug, 'model_image' => $modelImage] + $product;
+}, array_keys($catalog), array_values($catalog));
 ?>
 <!doctype html>
 <html lang="en">
@@ -58,7 +62,7 @@ $models = array_map(fn($slug, $product) => ['slug' => $slug] + $product, array_k
   <main id="top">
     <section class="hero" aria-label="Featured watches">
       <?php foreach ($heroSlides as $index => $slide): ?>
-        <article class="hero-slide<?= $index === 0 ? ' is-active' : '' ?>" data-slug="<?= htmlspecialchars($slide['slug']) ?>" style="--hero:url('/<?= htmlspecialchars(ltrim($slide['image_url'], '/')) ?>')">
+        <article class="hero-slide<?= $index === 0 ? ' is-active' : '' ?>" data-slug="<?= htmlspecialchars($slide['slug']) ?>" style="--hero:url('/<?= htmlspecialchars(ltrim($slide['image_url'], '/')) ?>');--hero-mobile:url('/<?= htmlspecialchars(ltrim($slide['mobile_image_url'], '/')) ?>')">
           <div class="hero-copy">
             <span class="eyebrow hero-brand">Fabius</span>
             <h1><?= htmlspecialchars($slide['tone']) ?></h1>
@@ -120,7 +124,7 @@ $models = array_map(fn($slug, $product) => ['slug' => $slug] + $product, array_k
 
     <section class="feature" id="story">
       <div class="feature-image reveal"><img src="<?= $assets['feature'] ?>" alt="Fabius Lumina gold watch campaign"></div>
-      <img class="feature-watch" src="<?= $assets['feature_watch'] ?>" alt="Fabius Lumina gold watch">
+      <img class="feature-watch" src="<?= $assets['feature_watch'] ?>" alt="Fabius Lumina Gold watch" loading="lazy" decoding="async">
       <div class="feature-copy reveal">
         <h2>Small pleasures<br>from Fabius</h2>
         <p>We create considered timepieces where precision, purpose and enduring design become part of life’s defining moments.</p><a class="button" href="house-of-fabius.php">Our Story</a>

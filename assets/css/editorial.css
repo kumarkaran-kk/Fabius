@@ -9,7 +9,7 @@
 
 .editorial-hero {
     position: relative;
-    height: calc(100svh - 82px);
+    height: clamp(620px, calc(100svh - 82px), 820px);
     min-height: 620px;
     overflow: hidden;
     background: #070707;
@@ -33,7 +33,7 @@
     position: absolute;
     left: 7%;
     top: 50%;
-    width: min(760px, 55vw);
+    width: min(820px, 52vw);
     transform: translateY(-50%)
 }
 
@@ -46,7 +46,7 @@
 }
 
 .editorial-hero h1 {
-    font: 400 clamp(52px, 6vw, 108px)/.98 var(--serif);
+    font: 400 clamp(48px, 5vw, 84px)/1 var(--serif);
     text-transform: uppercase;
     margin: 22px 0 30px
 }
@@ -265,17 +265,29 @@
     font-size: clamp(48px, 5vw, 84px)
 }
 
-.editorial-page--house .editorial-hero>img,
-.editorial-page--privacy .editorial-hero>img,
-.editorial-page--warranty .editorial-hero>img {
-    object-fit: contain;
-    object-position: right center
-}
+@media(min-width:901px) {
+    .editorial-page--house .editorial-hero>img,
+    .editorial-page--privacy .editorial-hero>img,
+    .editorial-page--warranty .editorial-hero>img {
+        position: absolute;
+        inset: 0 0 0 auto;
+        width: 40%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center 42%
+    }
 
-.editorial-page--house .editorial-hero-shade,
-.editorial-page--privacy .editorial-hero-shade,
-.editorial-page--warranty .editorial-hero-shade {
-    background: linear-gradient(90deg, #070707 0, rgba(7, 7, 7, .94) 34%, rgba(7, 7, 7, .42) 68%, rgba(7, 7, 7, .08))
+    .editorial-page--house .editorial-hero-shade,
+    .editorial-page--privacy .editorial-hero-shade,
+    .editorial-page--warranty .editorial-hero-shade {
+        background: linear-gradient(90deg, #050505 0, #050505 51%, rgba(5, 5, 5, .96) 61%, rgba(5, 5, 5, .38) 79%, rgba(5, 5, 5, .08) 100%)
+    }
+
+    .editorial-page--house .editorial-hero-copy,
+    .editorial-page--privacy .editorial-hero-copy,
+    .editorial-page--warranty .editorial-hero-copy {
+        width: min(820px, 54vw)
+    }
 }
 
 @media(max-width:900px) {
@@ -334,7 +346,8 @@
         right: 24px;
         top: auto;
         bottom: 78px;
-        width: auto;
+        width: calc(100vw - 48px);
+        max-width: calc(100vw - 48px);
         transform: none
     }
 
@@ -344,11 +357,24 @@
 
     .editorial-hero h1,
     .editorial-page--compact .editorial-hero h1 {
-        font-size: 45px
+        max-width: 100%;
+        font-size: clamp(34px, 9.2vw, 42px);
+        overflow-wrap: anywhere
     }
 
     .editorial-hero p {
-        font-size: 13px
+        width: calc(100vw - 72px);
+        max-width: 100%;
+        font-size: 13px;
+        white-space: normal;
+        overflow-wrap: anywhere
+    }
+
+    .editorial-page--house .editorial-hero h1,
+    .editorial-page--privacy .editorial-hero h1,
+    .editorial-page--warranty .editorial-hero h1 {
+        font-size: clamp(29px, 7.5vw, 36px);
+        letter-spacing: -.015em
     }
 
     .editorial-scroll {

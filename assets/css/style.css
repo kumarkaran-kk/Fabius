@@ -564,7 +564,11 @@ button {
 
 .model-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr)
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: rgba(16, 25, 35, .22);
+    border-top: 1px solid rgba(16, 25, 35, .16);
+    border-bottom: 1px solid rgba(16, 25, 35, .16)
 }
 
 .model-card {
@@ -1106,7 +1110,7 @@ footer a:hover {
 
     .hero-copy {
         left: 24px;
-        top: clamp(190px, 25svh, 215px);
+        top: clamp(355px, 46svh, 380px);
         width: calc(100% - 48px)
     }
 

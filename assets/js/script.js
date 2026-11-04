@@ -213,15 +213,6 @@
       footer.addEventListener('pointermove', moveFooterLight);
     }
 
-  const feature = document.querySelector('.feature');
-  if (feature && !feature.querySelector('.feature-watch')) {
-    const featureWatch = document.createElement('img');
-    featureWatch.className = 'feature-watch';
-      featureWatch.src = 'assets/images/shoot/home/feature-watch-cutout.webp';
-    featureWatch.alt = 'Fabius Lumina gold watch';
-    feature.insertBefore(featureWatch, feature.querySelector('.feature-copy'));
-  }
-
   document.querySelectorAll('.model-card').forEach((card, index) => {
     card.classList.add('model-card--' + index);
     const modelName = card.querySelector(':scope > span');
