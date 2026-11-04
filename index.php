@@ -62,7 +62,7 @@ $models = array_map(function ($slug, $product) {
   <main id="top">
     <section class="hero" aria-label="Featured watches">
       <?php foreach ($heroSlides as $index => $slide): ?>
-        <article class="hero-slide<?= $index === 0 ? ' is-active' : '' ?>" data-slug="<?= htmlspecialchars($slide['slug']) ?>" style="--hero:url('/<?= htmlspecialchars(ltrim($slide['image_url'], '/')) ?>');--hero-mobile:url('/<?= htmlspecialchars(ltrim($slide['mobile_image_url'], '/')) ?>')">
+        <article class="hero-slide<?= $index === 0 ? ' is-active' : '' ?>" data-slug="<?= htmlspecialchars($slide['slug']) ?>" style="--hero:url('<?= htmlspecialchars($slide['image_url'], ENT_QUOTES) ?>');--hero-mobile:url('<?= htmlspecialchars($slide['mobile_image_url'], ENT_QUOTES) ?>')">
           <div class="hero-copy">
             <span class="eyebrow hero-brand">Fabius</span>
             <h1><?= htmlspecialchars($slide['tone']) ?></h1>
@@ -82,7 +82,7 @@ $models = array_map(function ($slug, $product) {
       <a class="category-card" href="womens-watches.php"><img src="<?= $assets['promo_women'] ?>" alt="Woman wearing a rose-gold Fabius watch" width="1400" height="933" loading="lazy" decoding="async"><span>More</span></a>
     </section>
 
-    <section class="manifesto dark-visual reveal" style="--background:url('/<?= ltrim($assets['banner'], '/') ?>')">
+    <section class="manifesto dark-visual reveal" style="--background:url('<?= htmlspecialchars($assets['banner'], ENT_QUOTES) ?>')">
       <h2><strong>Crafted</strong> <em>for</em><br><strong>those</strong> <em>who</em> <strong>value</strong><br><em>Every</em> <strong>moment</strong></h2>
     </section>
 
@@ -131,7 +131,7 @@ $models = array_map(function ($slug, $product) {
       </div>
     </section>
 
-    <section class="visit dark-visual reveal" style="--background:url('/<?= ltrim($assets['visit_banner'], '/') ?>')">
+    <section class="visit dark-visual reveal" style="--background:url('<?= htmlspecialchars($assets['visit_banner'], ENT_QUOTES) ?>')">
       <div>
         <h2><em>Your</em> Specialist<br>Watch <em>Store</em></h2>
         <p>Need a closer look? Come visit us in store</p><a class="button button-light" href="#footer">Discover</a>
