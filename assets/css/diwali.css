@@ -1,0 +1,365 @@
+:root {
+  --diwali-gold: #d7aa54;
+  --diwali-ivory: #fff5d6;
+  --diwali-night: #090604;
+}
+
+.diwali-intro {
+  position: fixed;
+  z-index: 10000;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  color: #fff;
+  background:
+    radial-gradient(circle at 50% 58%, rgba(135, 60, 9, .22), transparent 31%),
+    linear-gradient(145deg, #060504, #100804 56%, #050403);
+  isolation: isolate;
+  transition: opacity .8s ease, visibility .8s ease;
+}
+
+.diwali-seen .diwali-intro,
+.diwali-intro.is-closing {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+body.diwali-lock { overflow: hidden; }
+
+.diwali-fireworks,
+.diwali-intro-glow {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.diwali-fireworks { z-index: -1; }
+
+.diwali-intro-glow {
+  z-index: -1;
+  opacity: .75;
+  background:
+    radial-gradient(circle at 15% 82%, rgba(213, 132, 38, .13), transparent 20%),
+    radial-gradient(circle at 85% 82%, rgba(213, 132, 38, .13), transparent 20%);
+}
+
+.diwali-greeting {
+  width: min(760px, calc(100% - 44px));
+  padding: 42px 30px;
+  text-align: center;
+  opacity: 1;
+  transform: translateY(0);
+  animation: diwaliGreetingIn 1.1s .2s cubic-bezier(.22, 1, .36, 1) both;
+}
+
+.diwali-kicker {
+  display: block;
+  margin-bottom: 18px;
+  color: var(--diwali-gold);
+  font: 500 11px/1.2 Inter, Arial, sans-serif;
+  letter-spacing: .48em;
+  text-transform: uppercase;
+}
+
+.diwali-greeting h1 {
+  margin: 0;
+  color: #fff;
+  font: 400 clamp(54px, 8vw, 118px)/.94 "Libre Baskerville", Georgia, serif;
+  letter-spacing: -.045em;
+  text-shadow: 0 5px 35px rgba(0, 0, 0, .45);
+}
+
+.diwali-greeting h1 em {
+  color: var(--diwali-ivory);
+  font-weight: 400;
+}
+
+.diwali-greeting p {
+  max-width: 590px;
+  margin: 28px auto 0;
+  color: rgba(255, 255, 255, .78);
+  font: 300 clamp(13px, 1.15vw, 17px)/1.75 Inter, Arial, sans-serif;
+  letter-spacing: .04em;
+}
+
+.diwali-greeting-rule {
+  display: block;
+  width: 92px;
+  height: 1px;
+  margin: 29px auto 0;
+  background: linear-gradient(90deg, transparent, var(--diwali-gold), transparent);
+}
+
+.diwali-skip {
+  position: absolute;
+  right: clamp(22px, 4vw, 62px);
+  bottom: clamp(22px, 4vw, 48px);
+  padding: 12px 0;
+  border: 0;
+  border-bottom: 1px solid rgba(215, 170, 84, .55);
+  color: rgba(255, 255, 255, .78);
+  background: none;
+  font: 500 10px/1 Inter, Arial, sans-serif;
+  letter-spacing: .25em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: color .25s ease, border-color .25s ease;
+}
+
+.diwali-skip span { margin-left: 10px; color: var(--diwali-gold); }
+.diwali-skip:hover,
+.diwali-skip:focus-visible { color: #fff; border-color: var(--diwali-gold); }
+.diwali-skip:focus-visible { outline: 1px solid var(--diwali-gold); outline-offset: 6px; }
+
+.diwali-ambient {
+  position: absolute;
+  z-index: 8;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.diwali-lights {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  display: flex;
+  justify-content: space-around;
+  width: min(760px, 68vw);
+  height: 42px;
+  padding: 0 10px;
+  border-top: 1px solid rgba(226, 193, 119, .34);
+  transform: translateX(-50%);
+}
+
+.diwali-lights i {
+  position: relative;
+  width: 4px;
+  height: 4px;
+  margin-top: 9px;
+  border-radius: 50%;
+  background: #ffe7a1;
+  box-shadow: 0 0 8px 3px rgba(238, 177, 67, .5), 0 0 22px 7px rgba(238, 143, 38, .18);
+  animation: diwaliTwinkle 2.4s ease-in-out infinite alternate;
+}
+
+.diwali-lights i::before {
+  content: "";
+  position: absolute;
+  bottom: 4px;
+  left: 1px;
+  width: 1px;
+  height: 10px;
+  background: rgba(226, 193, 119, .38);
+}
+
+.diwali-lights i:nth-child(3n) { animation-delay: -.8s; }
+.diwali-lights i:nth-child(3n + 1) { animation-delay: -1.6s; }
+
+.diya {
+  position: absolute;
+  bottom: 24px;
+  width: 62px;
+  height: 22px;
+  border-radius: 6px 6px 34px 34px;
+  background: linear-gradient(180deg, #b87323, #67310d 72%);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, .45), inset 0 2px 1px rgba(255, 220, 136, .55);
+  opacity: .82;
+}
+
+.diya-left { left: 26px; }
+.diya-right { right: 26px; }
+
+.diya i,
+.diya i::before {
+  position: absolute;
+  display: block;
+  content: "";
+  left: 27px;
+  bottom: 17px;
+  width: 9px;
+  height: 24px;
+  border-radius: 70% 30% 65% 35%;
+  background: linear-gradient(to top, #ff9f1c 10%, #ffe69a 68%, #fff 100%);
+  filter: drop-shadow(0 0 7px #ffad2f);
+  transform-origin: 50% 100%;
+  animation: diwaliFlame 1.35s ease-in-out infinite alternate;
+}
+
+.diya i::before {
+  left: 1px;
+  bottom: -1px;
+  width: 7px;
+  height: 17px;
+  opacity: .8;
+  filter: none;
+  background: linear-gradient(to top, #e85d04, #fff0bd);
+  animation-delay: -.5s;
+}
+
+/* Repeating festive details below the hero. They remain deliberately subtle so
+   the campaign never competes with product photography. */
+.diwali-campaign .category-grid,
+.diwali-campaign .collections,
+.diwali-campaign .vanguard,
+.diwali-campaign .reviews {
+  background-image:
+    radial-gradient(circle at 8% 12%, rgba(215, 170, 84, .07) 0 1px, transparent 2px),
+    radial-gradient(circle at 92% 74%, rgba(215, 170, 84, .06) 0 1px, transparent 2px);
+  background-size: 94px 94px, 121px 121px;
+}
+
+.diwali-campaign .collections,
+.diwali-campaign .models,
+.diwali-campaign .vanguard,
+.diwali-campaign .feature,
+.diwali-campaign .reviews {
+  position: relative;
+}
+
+.diwali-campaign .section-heading > span {
+  color: #a6782e;
+}
+
+.diwali-campaign .section-heading h2 {
+  position: relative;
+  display: inline-block;
+}
+
+.diwali-campaign .section-heading h2::before,
+.diwali-campaign .section-heading h2::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: clamp(30px, 4vw, 62px);
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(183, 133, 51, .7));
+}
+
+.diwali-campaign .section-heading h2::before {
+  right: calc(100% + 22px);
+}
+
+.diwali-campaign .section-heading h2::after {
+  left: calc(100% + 22px);
+  transform: rotate(180deg);
+}
+
+.diwali-section-divider {
+  position: relative;
+  z-index: 4;
+  display: grid;
+  grid-template-columns: minmax(30px, 150px) 12px minmax(30px, 150px);
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  height: 1px;
+  margin: 0 auto;
+  pointer-events: none;
+}
+
+.diwali-section-divider i {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(183, 133, 51, .65));
+}
+
+.diwali-section-divider i:last-child { transform: rotate(180deg); }
+
+.diwali-section-divider span {
+  width: 7px;
+  height: 7px;
+  border: 1px solid #b78533;
+  transform: rotate(45deg);
+  box-shadow: 0 0 10px rgba(215, 170, 84, .35);
+}
+
+.diwali-section-divider--wide { margin-top: 1px; }
+.diwali-section-divider--footer { transform: translateY(1px); }
+
+.diwali-campaign .manifesto,
+.diwali-campaign .visit {
+  box-shadow: inset 0 1px rgba(215, 170, 84, .25), inset 0 -1px rgba(215, 170, 84, .2);
+}
+
+.diwali-dark-ornament {
+  position: absolute !important;
+  z-index: 5 !important;
+  left: 50%;
+  bottom: 28px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: min(260px, 48vw);
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.diwali-dark-ornament i {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(232, 188, 99, .6));
+}
+
+.diwali-dark-ornament i:last-child { transform: rotate(180deg); }
+
+.diwali-dark-ornament span {
+  width: 8px;
+  height: 8px;
+  border: 1px solid rgba(255, 220, 145, .85);
+  transform: rotate(45deg);
+  box-shadow: 0 0 13px rgba(255, 176, 54, .6);
+}
+
+.diwali-campaign .review-content {
+  border: 1px solid rgba(183, 133, 51, .18);
+  box-shadow: 0 18px 55px rgba(104, 68, 15, .06);
+}
+
+.diwali-campaign footer {
+  border-top: 1px solid rgba(215, 170, 84, .24);
+}
+
+@keyframes diwaliGreetingIn {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes diwaliTwinkle {
+  50% { opacity: .45; transform: scale(.8); }
+  100% { opacity: 1; transform: scale(1.18); }
+}
+
+@keyframes diwaliFlame {
+  from { transform: rotate(-3deg) scale(.92, 1); }
+  to { transform: rotate(4deg) scale(1.07, .96); }
+}
+
+@media (max-width: 700px) {
+  .diwali-greeting { padding-inline: 0; }
+  .diwali-kicker { font-size: 9px; letter-spacing: .35em; }
+  .diwali-greeting h1 { font-size: clamp(48px, 16vw, 72px); line-height: 1.02; }
+  .diwali-greeting p { max-width: 330px; font-size: 12px; }
+  .diwali-skip { right: 50%; transform: translateX(50%); white-space: nowrap; }
+  .diwali-lights { width: 92vw; }
+  .diya { bottom: 18px; transform: scale(.72); transform-origin: bottom left; }
+  .diya-right { transform: scale(.72); transform-origin: bottom right; }
+  .diya-left { left: 12px; }
+  .diya-right { right: 12px; }
+  .diwali-campaign .section-heading h2::before,
+  .diwali-campaign .section-heading h2::after { display: none; }
+  .diwali-section-divider {
+    grid-template-columns: minmax(20px, 75px) 9px minmax(20px, 75px);
+    gap: 10px;
+  }
+  .diwali-dark-ornament { bottom: 18px; width: 170px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .diwali-greeting { animation: none; opacity: 1; transform: none; }
+  .diwali-lights i,
+  .diya i,
+  .diya i::before { animation: none; }
+}

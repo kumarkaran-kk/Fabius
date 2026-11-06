@@ -1,6 +1,7 @@
 <?php
 require_once __DIR__ . '/data/catalog.php';
 $catalog = fabius_catalog();
+$diwaliExperienceEnabled = true; // Temporary campaign switch: set to false to remove all Diwali effects.
 $imageBase = 'assets/images/shoot/';
 $sitePath = rtrim(str_replace('\\', '/', dirname($_SERVER['SCRIPT_NAME'] ?? '/')), '/');
 $cssAssetUrl = static fn(string $path): string => ($sitePath === '' ? '' : $sitePath) . '/' . ltrim($path, '/');
@@ -55,14 +56,37 @@ $models = array_map(function ($slug, $product) {
   <link rel="stylesheet" href="assets/css/header.css">
   <link rel="stylesheet" href="assets/css/footer.css">
   <link rel="stylesheet" href="assets/css/brand-accents.css">
+  <?php if ($diwaliExperienceEnabled): ?>
+    <link rel="stylesheet" href="assets/css/diwali.css">
+  <?php endif; ?>
 </head>
 
-<body>
+<body<?= $diwaliExperienceEnabled ? ' class="diwali-campaign"' : '' ?>>
+  <?php if ($diwaliExperienceEnabled): ?>
+    <div class="diwali-intro" role="dialog" aria-modal="true" aria-labelledby="diwali-title" aria-describedby="diwali-message">
+      <canvas class="diwali-fireworks" aria-hidden="true"></canvas>
+      <div class="diwali-intro-glow" aria-hidden="true"></div>
+      <div class="diwali-greeting">
+        <span class="diwali-kicker">A celebration of light</span>
+        <h1 id="diwali-title">Happy <em>Diwali</em></h1>
+        <p id="diwali-message">FABIUS wishes you a luminous season of joy, prosperity and timeless moments.</p>
+        <span class="diwali-greeting-rule" aria-hidden="true"></span>
+      </div>
+      <button class="diwali-skip" type="button" aria-label="Continue to the Fabius website">Enter Fabius <span aria-hidden="true">&rarr;</span></button>
+    </div>
+  <?php endif; ?>
   <?php $pageType = 'home';
   require __DIR__ . '/includes/header.php'; ?>
 
   <main id="top">
     <section class="hero" aria-label="Featured watches">
+      <?php if ($diwaliExperienceEnabled): ?>
+        <div class="diwali-ambient" aria-hidden="true">
+          <div class="diwali-lights"><?php for ($light = 0; $light < 12; $light++): ?><i></i><?php endfor; ?></div>
+          <div class="diya diya-left"><i></i></div>
+          <div class="diya diya-right"><i></i></div>
+        </div>
+      <?php endif; ?>
       <?php foreach ($heroSlides as $index => $slide): ?>
         <article class="hero-slide<?= $index === 0 ? ' is-active' : '' ?>" data-slug="<?= htmlspecialchars($slide['slug']) ?>" style="--hero:url('<?= htmlspecialchars($cssAssetUrl($slide['image_url']), ENT_QUOTES) ?>');--hero-mobile:url('<?= htmlspecialchars($cssAssetUrl($slide['mobile_image_url']), ENT_QUOTES) ?>')">
           <div class="hero-copy">
@@ -83,9 +107,11 @@ $models = array_map(function ($slug, $product) {
       <a class="category-card category-card--men" href="mens-watches.php"><img src="<?= $assets['promo_men'] ?>" alt="Man wearing a blue Fabius watch"><span>More</span></a>
       <a class="category-card" href="womens-watches.php"><img src="<?= $assets['promo_women'] ?>" alt="Woman wearing a rose-gold Fabius watch" width="1400" height="933" loading="lazy" decoding="async"><span>More</span></a>
     </section>
+    <?php if ($diwaliExperienceEnabled): ?><div class="diwali-section-divider" aria-hidden="true"><i></i><span></span><i></i></div><?php endif; ?>
 
     <section class="manifesto dark-visual reveal" style="--background:url('<?= htmlspecialchars($cssAssetUrl($assets['banner']), ENT_QUOTES) ?>')">
       <h2><strong>Crafted</strong> <em>for</em><br><strong>those</strong> <em>who</em> <strong>value</strong><br><em>Every</em> <strong>moment</strong></h2>
+      <?php if ($diwaliExperienceEnabled): ?><div class="diwali-dark-ornament" aria-hidden="true"><i></i><span></span><i></i></div><?php endif; ?>
     </section>
 
     <section class="collections section-pad" id="collections">
@@ -107,6 +133,7 @@ $models = array_map(function ($slug, $product) {
         </div>
       </div>
     </section>
+    <?php if ($diwaliExperienceEnabled): ?><div class="diwali-section-divider" aria-hidden="true"><i></i><span></span><i></i></div><?php endif; ?>
 
     <section class="models" id="models">
       <header class="section-heading reveal"><span>Explore</span>
@@ -118,6 +145,7 @@ $models = array_map(function ($slug, $product) {
         <?php endforeach; ?>
       </div>
     </section>
+    <?php if ($diwaliExperienceEnabled): ?><div class="diwali-section-divider diwali-section-divider--wide" aria-hidden="true"><i></i><span></span><i></i></div><?php endif; ?>
 
     <section class="vanguard reveal">
       <h2>Eclipse<br>Vanguard</h2>
@@ -132,12 +160,14 @@ $models = array_map(function ($slug, $product) {
         <p>We create considered timepieces where precision, purpose and enduring design become part of life’s defining moments.</p><a class="button" href="house-of-fabius.php">Our Story</a>
       </div>
     </section>
+    <?php if ($diwaliExperienceEnabled): ?><div class="diwali-section-divider" aria-hidden="true"><i></i><span></span><i></i></div><?php endif; ?>
 
     <section class="visit dark-visual reveal" style="--background:url('<?= htmlspecialchars($cssAssetUrl($assets['visit_banner']), ENT_QUOTES) ?>')">
       <div>
         <h2><em>Your</em> Specialist<br>Watch <em>Store</em></h2>
         <p>Need a closer look? Come visit us in store</p><a class="button button-light" href="#footer">Discover</a>
       </div>
+      <?php if ($diwaliExperienceEnabled): ?><div class="diwali-dark-ornament" aria-hidden="true"><i></i><span></span><i></i></div><?php endif; ?>
     </section>
 
     <section class="reviews section-pad">
@@ -151,10 +181,12 @@ $models = array_map(function ($slug, $product) {
         </div><button class="review-arrow" data-review="next" aria-label="Next review">→</button>
       </div>
     </section>
+    <?php if ($diwaliExperienceEnabled): ?><div class="diwali-section-divider diwali-section-divider--footer" aria-hidden="true"><i></i><span></span><i></i></div><?php endif; ?>
   </main>
 
   <?php require __DIR__ . '/includes/footer.php'; ?>
   <script src="assets/js/script.js"></script>
+  <?php if ($diwaliExperienceEnabled): ?><script src="assets/js/diwali.js"></script><?php endif; ?>
 </body>
 
 </html>
